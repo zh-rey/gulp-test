@@ -1,0 +1,23 @@
+$base-font: 14px;
+$base-color: #333333;
+$color-o:#285A9F;
+@mixin border-radius($radius:3px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+	-webkit-box-shadow: $shadows;
+	-ms-box-shadow: $shadows;
+	-o-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+@mixin transition($n:width,$t:2s,$l:linear){
+	transition: $n $t $l;
+	-moz-transition: $n $t $l;
+	-webkit-transition: $n $t $l;
+	-o-transition: $n $t $l;
+}

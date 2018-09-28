@@ -1,0 +1,40 @@
+/**created by Rey on 2018.06.01***/
+@import 'base.scss';
+.banner{
+  .img-box{
+    &:before{
+      padding-bottom: 31.25%;
+    }
+  }
+}
+.main{
+  li{
+    margin-bottom: 25px;
+    .img-box{
+      overflow: hidden;
+      &:before{
+        padding-bottom: 66.5%;
+      }
+      img{
+        @include transition(transform,.2s);
+        &:hover{
+          transform: scale(1.05);
+          -moz-transform: scale(1.05);
+          -webkit-transform: scale(1.05);
+          -o-transform: scale(1.05);
+        }
+      }
+    }
+  }
+  .main-4{
+    ul.row{
+      margin: 0 -3px;
+    }
+    li{
+      float: left;
+      width: 16.6666%;
+      padding: 0 3px;
+      margin-bottom: 6px;
+    }
+  }
+}

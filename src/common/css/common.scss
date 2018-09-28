@@ -1,0 +1,167 @@
+/*created by Rey on 2018.05.31*/
+@import 'reset.scss';
+html{
+  overflow-x: hidden;  
+  overflow-y: auto;
+}
+body{
+  width: 100vw;  
+  overflow: hidden;  
+}
+.header{
+  padding: 35px 100px;
+  .fixed-header{
+    height: 60px;
+  }
+  .logo{
+    float: left;
+    img{
+      height: 60px;
+    }
+    .dark{
+      display: none;
+    }
+  }
+  .menu{
+    float: right;
+    width: 40px;
+    padding-left: 2px;
+    margin-top: 15px;
+    .menu-btn{
+      width: 38px;
+      height: 38px;
+      line-height: 38px;
+      text-align: center;
+      background: #ccc;
+      cursor: pointer;
+      @include border-radius(50%);
+      @include transition(transform,.3s);
+      i{
+        font-size: 20px;
+        color: #fff;
+      }
+      &:hover,&.active{
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .nav{
+    float: right;
+    margin-right: 100px;
+    margin-top: 10px;
+    position: relative;
+    ul{
+      li{
+        float: left;
+        margin-right: 30px;
+        &:last-child{
+          margin-right: 0;
+        }
+        a{
+          display: block;
+          font-size: 20px;
+          padding: 10px 0;
+        }
+        &.active{
+          a{
+            color: $color-o;
+          }
+        }
+      }
+    }
+    .line{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: $color-o;
+    }
+  }
+}
+.main{
+  padding-bottom: 80px;
+  .main-title{
+    text-align: center;
+    padding-top: 65px;
+    padding-bottom: 50px;
+    h2{
+      font-size: 27px;
+    }
+    p{
+      font-size: 18px;
+      margin-top: 15px;
+    }
+    span{
+      display: block;
+      width: 40px;
+      height: 2px;
+      margin: 10px auto 0;
+      border-bottom: 2px solid $color-o;
+    }
+  }
+}
+.footer{
+  background: #000;
+  color: #aaa;
+  .content{
+    padding: 30px;
+  }
+  a{
+    color: #aaa;
+    &:hover{
+      color: #fff;
+    }
+  }
+  ul.link-group{
+    float: left;
+    &>li{
+      float: left;
+      margin-right: 80px;
+      &:last-child{
+        margin-right: 0;
+      }
+      p{
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+      li{
+        line-height: 28px;
+        a{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .logo{
+    float: right;
+    margin-top: 20px;
+    height: 100px;
+  }
+  .qr{
+    float: right;
+    margin-right: 80px;
+    text-align: center;
+    p{
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    span{
+      display: block;
+    }
+  }
+  .bottom{
+    margin-top: 30px;
+    span{
+      margin-left: 20px;
+    }
+  }
+}
+.menu-modal{
+  .menu{
+    background-image: linear-gradient(120deg, #285A9F , #2bd0e4);
+    color: #fff;
+    a{
+      color: #fff;
+    }
+  }
+}
