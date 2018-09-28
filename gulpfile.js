@@ -4,6 +4,7 @@ var gulp = require('gulp'), // 本地安装gulp所用到的地方
     sass = require('gulp-sass'), // sass编译
     cssMin = require('gulp-clean-css'), // css压缩
     jsMin = require('gulp-uglify'), // js压缩
+    ejs = require('gulp-ejs'), // ejs模板编译
     imageMin = require('gulp-imagemin'), //图片压缩
     sourcemaps = require('gulp-sourcemaps'), //生成sourcemap文件
     changed = require('gulp-changed'), // 仅仅传递更改过的文件
@@ -15,7 +16,7 @@ var gulp = require('gulp'), // 本地安装gulp所用到的地方
     sequence = require('gulp-sequence'), //按顺序执行任务
     cache = require('gulp-cache'), //图片缓存
     notify = require('gulp-notify'), //更改错误提示
-    fileinclude = require('gulp-file-include'),//文件引入
+    fileinclude = require('gulp-file-include'), //文件引入
     plumber = require('gulp-plumber'); //出现异常并不终止watch事件
 
 //gulp.task(name[, deps], fn) 定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数
