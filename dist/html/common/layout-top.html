@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/dist/common/js/respond.min.js"></script>
+    <script src="/dist/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_687018_ntq6bs8lx7f7ds4i.css">
+    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
+    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
+    <script>
+      $.ajaxSetup({
+        beforeSend: function(xhr) {
+          console.log(this);
+          console.log(xhr);
+        }
+      });
+        seajs.config({
+            alias: {
+                'jquery': 'jquery-3.3.1.js',
+                'swiper': 'swiper.min.js',
+                'common': 'common.js'
+            }
+        });
+    </script>
+</head>
+<body>
