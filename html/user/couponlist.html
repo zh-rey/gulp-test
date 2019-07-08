@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+	<div class="couponlist main_page">
+    <header class="fixed_top">
+      <i class="iconfont iconleft back"></i>
+      <span>Coupon list</span>
+    </header>
+    <div class="main">
+      <ul class="tabs flex">
+        <li class="list active">Unused</li>
+        <li class="list">Usage record</li>
+        <li class="list">Expired</li>
+      </ul>
+      <div class="swiper-container page_box">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <ul class="coupon_group">
+              
+              <li class="list">
+                <div class="coupon flex">
+                  <div class="lf">
+                    <p class="name">EXtra 10% off</p>
+                    <p class="info"><span class="over">Orders Over$49</span><span class="time">Time: 20190611-20190620</span></p>
+                  </div>
+                  <div class="rt">
+                    <span class="use">Be usable</span>
+                    <i class="iconfont iconright"></i>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p class="name">优惠券详情</p>
+                  <p class="info">Father's Day Event Coupon</p>
+                </div>
+              </li>
+              
+              <li class="list">
+                <div class="coupon flex">
+                  <div class="lf">
+                    <p class="name">EXtra 10% off</p>
+                    <p class="info"><span class="over">Orders Over$49</span><span class="time">Time: 20190611-20190620</span></p>
+                  </div>
+                  <div class="rt">
+                    <span class="use">Be usable</span>
+                    <i class="iconfont iconright"></i>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p class="name">优惠券详情</p>
+                  <p class="info">Father's Day Event Coupon</p>
+                </div>
+              </li>
+              
+              <li class="list">
+                <div class="coupon flex">
+                  <div class="lf">
+                    <p class="name">EXtra 10% off</p>
+                    <p class="info"><span class="over">Orders Over$49</span><span class="time">Time: 20190611-20190620</span></p>
+                  </div>
+                  <div class="rt">
+                    <span class="use">Be usable</span>
+                    <i class="iconfont iconright"></i>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p class="name">优惠券详情</p>
+                  <p class="info">Father's Day Event Coupon</p>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="swiper-slide">
+              <ul class="coupon_group">
+                
+                <li class="list">
+                  <div class="coupon flex">
+                    <div class="lf">
+                      <p class="name">EXtra 10% off</p>
+                      <p class="info"><span class="over">Orders Over$49</span><span class="time">Time: 20190611-20190620</span></p>
+                    </div>
+                    <div class="rt">
+                      <span class="use">Be usable</span>
+                      <i class="iconfont iconright"></i>
+                    </div>
+                  </div>
+                  <div class="detail">
+                    <p class="name">优惠券详情</p>
+                    <p class="info">Father's Day Event Coupon</p>
+                  </div>
+                </li>
+                
+                <li class="list">
+                  <div class="coupon flex">
+                    <div class="lf">
+                      <p class="name">EXtra 10% off</p>
+                      <p class="info"><span class="over">Orders Over$49</span><span class="time">Time: 20190611-20190620</span></p>
+                    </div>
+                    <div class="rt">
+                      <span class="use">Be usable</span>
+                      <i class="iconfont iconright"></i>
+                    </div>
+                  </div>
+                  <div class="detail">
+                    <p class="name">优惠券详情</p>
+                    <p class="info">Father's Day Event Coupon</p>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="swiper-slide">
+                <ul class="coupon_group">
+                  
+                  <li class="list expired">
+                    <div class="coupon flex">
+                      <div class="lf">
+                        <p class="name">EXtra 10% off</p>
+                        <p class="info"><span class="over">Orders Over$49</span><span class="time">Time: 20190611-20190620</span></p>
+                      </div>
+                      <div class="rt">
+                        <span class="use">Expired</span>
+                        <i class="iconfont iconright"></i>
+                      </div>
+                    </div>
+                    <div class="detail">
+                      <p class="name">优惠券详情</p>
+                      <p class="info">Father's Day Event Coupon</p>
+                    </div>
+                  </li>
+                  
+                </ul>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="pages">
+      <i class="iconfont iconleft"></i>
+      <span>Page</span>
+      <i class="iconfont iconright"></i>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      $('.page_box').on('click', '.coupon_group .list', function(){
+        if($(this).hasClass('show')){
+          $(this).removeClass('show');
+          $(this).find('.detail').slideUp(300);
+        }else{
+          $('.page_box .coupon_group .list.show').removeClass('show').find('.detail').slideUp(300);
+          $(this).addClass('show');
+          $(this).find('.detail').slideDown(300);
+        }
+      });
+      seajs.use('swiper', function(){
+        var tabsSwiper = new Swiper('.couponlist .swiper-container',{
+          loop : true,
+          speed:500,
+          onSlideChangeStart: function(){
+            $(".couponlist .tabs .active").removeClass('active')
+            $(".couponlist .tabs .list").eq(tabsSwiper.activeIndex-1).addClass('active')  
+          }
+        });
+        $(".couponlist .tabs").on('click', '.list', function(){
+          tabsSwiper.swipeTo($(this).index())
+        })
+      });
+    });
+  </script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

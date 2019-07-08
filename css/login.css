@@ -1,0 +1,97 @@
+/**created by Rey on 2019.07.01***/
+.login.main_page {
+  padding-bottom: 0; }
+
+.login .fixed_top {
+  background: #fff; }
+  .login .fixed_top span, .login .fixed_top i {
+    color: #333; }
+
+.login .tabs {
+  background: #fff;
+  height: .8rem;
+  margin-bottom: .2rem;
+  align-items: center;
+  justify-content: space-around; }
+  .login .tabs .tab {
+    width: 45%;
+    height: 100%;
+    line-height: .8rem;
+    text-align: center;
+    font-size: .3rem;
+    border-bottom: .03rem solid #fff; }
+    .login .tabs .tab.active {
+      color: #DE3F37;
+      border-color: #DE3F37; }
+
+.login .page_box {
+  height: calc(100vh - 1.8rem);
+  background: #fff; }
+  .login .page_box .swiper-slide {
+    overflow-y: auto; }
+
+.login .form_box {
+  padding: .6rem .3rem; }
+  .login .form_box > label, .login .form_box .phone_box {
+    position: relative; }
+    .login .form_box > label input, .login .form_box .phone_box input {
+      height: .8rem;
+      font-size: .3rem; }
+    .login .form_box > label > i.iconfont, .login .form_box .phone_box > i.iconfont {
+      position: absolute;
+      right: .2rem;
+      top: .01rem;
+      font-size: .4rem; }
+    .login .form_box > label .select, .login .form_box .phone_box .select {
+      height: .8rem;
+      line-height: .6rem;
+      margin-top: 0; }
+      .login .form_box > label .select i, .login .form_box .phone_box .select i {
+        top: .2rem; }
+  .login .form_box .forgot {
+    text-align: right; }
+    .login .form_box .forgot a {
+      color: #DE3F37;
+      font-size: .24rem; }
+
+.login .bottom_box {
+  padding: .3rem;
+  text-align: center; }
+  .login .bottom_box .login, .login .bottom_box .create {
+    display: block;
+    width: 100%;
+    height: 1rem;
+    font-size: .36rem; }
+  .login .bottom_box .others {
+    margin-top: .85rem; }
+    .login .bottom_box .others .other {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin: 0 .4rem; }
+      .login .bottom_box .others .other img {
+        width: 100%;
+        height: 100%; }
+  .login .bottom_box .create {
+    margin-top: -.5rem; }
+  .login .bottom_box .text {
+    font-size: .24rem;
+    margin: .5rem 0 -.3rem; }
+  .login .bottom_box .to_login, .login .bottom_box .to_acoount {
+    margin-top: .5rem;
+    font-size: .24rem;
+    color: #DE3F37;
+    font-weight: bold; }
+
+.recovery .main {
+  margin-top: .2rem;
+  min-height: calc(100vh - 1rem);
+  background: #fff; }
+
+.recovery .submit_box {
+  margin-top: .2rem;
+  padding: 0 .3rem; }
+  .recovery .submit_box .submit {
+    width: 100%;
+    height: 1rem;
+    font-size: .36rem; }

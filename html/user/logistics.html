@@ -76,41 +76,76 @@
     </script>
 </head>
 <body>
-	<div class="topay main_page">
+	<div class="logistics main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Cart</span>
+      <span>Logistics Status</span>
     </header>
     <div class="main">
-      <div class="select_box shadow_box">
-        <label class="flex">
-          <img src="../../image/paypal.png" alt="paypal">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <img src="../../image/ipay.png" alt="iPayLinks">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><img src="../../image/money_icon.png" alt="Delivery"><span>Delivery</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><i class="iconfont icontel"></i><span>Telephone order</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
+      <p class="name">Shipped / Goods received</p>
+      <div class="shipped_box">
+        <div class="top flex">
+          <div class="img">
+            <img src="../../image/shunfeng.png" alt="logo">
+          </div>
+          <div class="info">
+            <p class="shipped_name">Shunfeng Express</p>
+            <p class="tel">Tel: 95338</p>
+          </div>
+        </div>
+        <div class="bottom flex">
+          <p>Logistics Number: 968123456789</p>
+          <i class="iconfont iconcopy"  data-clipboard-text="968123456789"></i>
+        </div>
       </div>
+      <a class="stores flex" href="#"><span>Self-contained stores</span><i class="iconfont iconright"></i></a>
+      <ul class="shipped_line">
+        <li class="flex">
+          <p class="time"></p>
+          <span class="circle"></span>
+          <div class="info">
+            <p>Office 806, Floor 8 of Jia Jun Building B, Shi Cha 
+Road, Baiyun District, Guangzhou</p>
+          </div>
+        </li>
+        <li class="flex active">
+          <p class="time">06-24<span>24:00</span></p>
+          <span class="circle"></span>
+          <div class="info">
+            <span>Shipped</span>
+            <p>The order has begun to be collected.</p>
+          </div>
+        </li>
+        <li class="flex">
+          <p class="time">06-24<span>24:00</span></p>
+          <span class="circle"></span>
+          <div class="info">
+            <span>Shipped</span>
+            <p>The order has begun to be collected.</p>
+          </div>
+        </li>
+        <li class="flex">
+          <p class="time">06-24<span>24:00</span></p>
+          <span class="circle"></span>
+          <div class="info">
+            <span>Shipped</span>
+            <p>The order has begun to be collected.</p>
+          </div>
+        </li>
+      </ul>
     </div>
-    <footer class="fixed_shop">
-      <div class="lf">
-        <p class="num">Order number: <span>123456789</span></p>
-        <p class="price">Pay: $<span>0.00</span></p>
-      </div>
-      <button class="btn" id="order">To pay</button>
-    </footer>
   </div>
   <script>
-    
+    seajs.use('clipboard', function(){
+      var clipboard = new ClipboardJS('.iconcopy');
+      clipboard.on('success', function(e) {
+        $message('Copy Success', 'success')
+      });
+
+      clipboard.on('error', function(e) {
+        $message('Copy Error', 'error')
+      });
+    });
   </script>
     
     <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>

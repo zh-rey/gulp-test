@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+	<div class="addressdetail main_page">
+    <header class="fixed_top">
+      <i class="iconfont iconleft back"></i>
+      <span>Edit Address</span>
+    </header>
+    <div class="main">
+      <p class="top_tittle">ADDRESSES</p>
+      <div class="detail">
+        <form>
+          <label>
+            <p class="label">First Name*</p>
+            <input type="text" value="Jack">
+          </label>
+          <label>
+            <p class="label">Last Name*</p>
+            <input type="text" value="Jack">
+          </label>
+          <label>
+            <p class="label">Delivery Address*</p>
+            <textarea>Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District, Guangzhou</textarea>
+            <input class="additional" type="text" placeholder="Additional Info">
+          </label>
+          <label>
+            <p class="label country">Country*</p>
+            <div class="select" id="country"><span>Country</span><i class="iconfont iconselect"></i></div>
+          </label>
+          <label>
+            <p class="label">City*</p>
+            <div class="select" id="city"><span>City Name</span><i class="iconfont iconselect"></i></div>
+          </label>
+          <div class="phone_box flex">
+            <div class="select code" id="code"><span>+254</span><i class="iconfont iconselect"></i></div>
+            <label class="phone">
+              <p class="label">Mobile phone number*</p>
+              <input type="phone" value="12345678901">
+            </label>
+          </div>
+          <div class="default">
+            <label class="check_box"><input type="checkbox" hidden><span></span></label>
+            <span>Default Shipping Address</span>
+          </div>
+        </form>
+      </div>
+      <button class="save btn">Save</button>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      seajs.use(['select'], function(){
+        new MobileSelect({
+          trigger: '#country',
+          title: 'Country choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: 'country1' },
+                { id: '2', value: 'country2' },
+                { id: '3', value: 'country3' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+        new MobileSelect({
+          trigger: '#city',
+          title: 'City choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: 'city1' },
+                { id: '2', value: 'city2' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+        new MobileSelect({
+          trigger: '#code',
+          title: 'Code choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: 'code1' },
+                { id: '2', value: 'code2' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+      });
+    })
+  </script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

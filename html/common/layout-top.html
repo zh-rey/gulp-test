@@ -10,16 +10,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <!--[if lt IE 9]>
-    <script src="/dist/common/js/respond.min.js"></script>
-    <script src="/dist/common/js/html5.min.js"></script>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_k54pci5jn6s.css">
-    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
-    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
-    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
-    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/dist/common/js/jquery.mockjax.min.js"></script>
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
     <script>
       $.mockjax({
         url: "/api/ajax",
@@ -31,7 +31,7 @@
       });
       $.mockjax({
         url: '/api/ajax1',
-        responseTime: 2000,
+        responseTime: 1000,
         responseText: {
           code: 1,
           rdata: "返回数据",
@@ -49,6 +49,7 @@
           'jquery': 'jquery-3.3.1.js',
           'swiper': 'swiper.min.js',
           'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
           'select': 'mobileSelect/mobileSelect.min.js'
         }
       });
@@ -75,8 +76,3 @@
     </script>
 </head>
 <body>
-  <!-- <div class="alert_box">
-    <div class="alert">
-      1111222
-    </div>
-  </!--> -->

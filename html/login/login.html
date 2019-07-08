@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+	<div class="login main_page">
+    <header class="fixed_top">
+      <span>Sign In</span>
+      <i class="iconfont iconclose rt back"></i>
+    </header>
+    <div class="main">
+      <div class="tabs flex">
+        <span class="tab active">Login</span>
+        <span class="tab">Create Acoount</span>
+      </div>
+      <div class="swiper-container page_box">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <form class="form_box">
+              <label>
+                <input type="text" value="" placeholder="E-Mail/Name*">
+              </label>
+              <label>
+                <input type="password" value="" placeholder="Password*">
+                <i class="iconfont changeshow iconclosepassword"></i>
+              </label>
+              <p class="forgot"><a href="./recovery.html">Forgot your password?</a></p>
+            </form>
+            <div class="bottom_box">
+              <button class="login btn">Login</button>
+              <div class="others">
+                <div class="other facebook">
+                  <img src="../../image/Facebook.png" alt="Facebook">
+                </div>
+                <div class="other facebook">
+                  <img src="../../image/Instagram.png" alt="Instagram">
+                </div>
+              </div>
+              <p class="to_acoount">Create Acoount</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <form class="form_box">
+              <label>
+                <input type="text" value="" placeholder="First Name*">
+              </label>
+              <label>
+                <input type="text" value="" placeholder="Last Name*">
+              </label>
+              <label>
+                <input type="text" value="" placeholder="Email*">
+              </label>
+              <label>
+                <input type="password" value="" placeholder="Password*">
+                <i class="iconfont changeshow iconclosepassword"></i>
+              </label>
+              <div class="phone_box flex">
+                <div class="select code" id="code"><span>+254</span><i class="iconfont iconselect"></i></div>
+                <label class="phone">
+                  <input type="phone" placeholder="Mobile phone number*">
+                </label>
+              </div>
+            </form>
+            <div class="bottom_box">
+              <button class="create btn">Create Acoount</button>
+              <div class="others">
+                <div class="other facebook">
+                  <img src="../../image/Facebook.png" alt="Facebook">
+                </div>
+                <div class="other facebook">
+                  <img src="../../image/Instagram.png" alt="Instagram">
+                </div>
+              </div>
+              <p class="text">Already have an account?</p>
+              <p class="to_login">Login</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      seajs.use('swiper', function(){
+        var tabsSwiper = new Swiper('.login .swiper-container',{
+          speed:500,
+          onSlideChangeStart: function(){
+            $(".login .tabs .active").removeClass('active')
+            $(".login .tabs .tab").eq(tabsSwiper.activeIndex).addClass('active')  
+          }
+        });
+        $(".login .tabs").on('click', '.tab', function(){
+          tabsSwiper.swipeTo($(this).index())
+        })
+        $('.login .bottom_box .to_login').click(function(){
+          tabsSwiper.swipeTo(0)
+        });
+        $('.login .bottom_box .to_acoount').click(function(){
+          tabsSwiper.swipeTo(1)
+        });
+      });
+      $('.form_box').on('click', '.changeshow', function(){
+        if($(this).hasClass('iconshowpassword')){
+          $(this).addClass('iconclosepassword').removeClass('iconshowpassword')
+          $(this).prev().attr('type', 'password');
+        }else{
+          $(this).removeClass('iconclosepassword').addClass('iconshowpassword')
+          $(this).prev().attr('type', 'text');
+        }
+      });
+      seajs.use(['select'], function(){ // 选择区号
+        new MobileSelect({
+          trigger: '#code',
+          title: 'Country choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: 'country1' },
+                { id: '2', value: 'country2' },
+                { id: '3', value: 'country3' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+      });
+    });
+  </script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

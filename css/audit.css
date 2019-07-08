@@ -1,0 +1,207 @@
+/**created by Rey on 2019.07.07***/
+.audit {
+  background: #fff; }
+  .audit .main {
+    padding: .2rem; }
+  .audit .top_box .logo {
+    font-size: .32rem;
+    font-weight: bold;
+    color: #DA251D;
+    width: 5.8rem;
+    margin: 0 auto; }
+  .audit .top_box h1 {
+    font-size: .3rem;
+    font-weight: bold;
+    color: #DA251D;
+    margin: .3rem 0;
+    text-align: center; }
+  .audit .top_box .info {
+    font-size: .24rem; }
+  .audit .top_box .name_box {
+    margin-top: .25rem; }
+    .audit .top_box .name_box .box span {
+      color: #DE3F37; }
+    .audit .top_box .name_box .box input {
+      width: 1.7rem;
+      border: none;
+      border-bottom: .02rem solid #505050;
+      margin-left: .1rem; }
+    .audit .top_box .name_box .text {
+      font-size: .24rem;
+      color: #505050;
+      margin-top: .15rem; }
+  .audit .form .list_name {
+    font-size: .3rem;
+    font-weight: bold;
+    margin-top: .4rem;
+    margin-bottom: .3rem;
+    color: #DA251D; }
+  .audit .form label {
+    display: block;
+    width: 100%;
+    margin-bottom: .3rem; }
+    .audit .form label p {
+      font-size: .24rem;
+      color: #505050;
+      margin-bottom: .1rem; }
+    .audit .form label input, .audit .form label textarea {
+      display: block;
+      width: 100%;
+      height: .74rem;
+      border: .02rem solid #999999; }
+    .audit .form label textarea {
+      height: 2.7rem; }
+  .audit .form .add_info {
+    align-items: center; }
+    .audit .form .add_info p {
+      width: 100%;
+      font-size: .24rem;
+      line-height: .4rem;
+      color: #DA251D; }
+    .audit .form .add_info i {
+      flex-shrink: 0;
+      font-size: .6rem;
+      line-height: .6rem;
+      color: #DA251D; }
+  .audit .form > p.info {
+    font-size: .24rem;
+    color: #DA251D;
+    margin-bottom: .3rem;
+    margin-top: -.2rem; }
+  .audit .form .pictures_box {
+    margin-top: .5rem; }
+    .audit .form .pictures_box .label {
+      font-size: .3rem;
+      font-weight: bold;
+      margin-bottom: .3rem; }
+    .audit .form .pictures_box .img_group {
+      justify-content: space-between; }
+      .audit .form .pictures_box .img_group label {
+        width: 1.68rem;
+        height: 1.68rem;
+        line-height: 1.68rem;
+        border-radius: .1rem;
+        background: #ccc;
+        text-align: center;
+        position: relative; }
+        .audit .form .pictures_box .img_group label i.iconaddimg {
+          font-size: .8rem;
+          color: #9A9A9A; }
+        .audit .form .pictures_box .img_group label input {
+          width: 0;
+          height: 0;
+          border: 0;
+          opacity: 0; }
+        .audit .form .pictures_box .img_group label i.icondelete {
+          display: none;
+          position: absolute;
+          top: .1rem;
+          right: .1rem;
+          font-size: .3rem;
+          line-height: .3rem;
+          color: #DA251D; }
+        .audit .form .pictures_box .img_group label img {
+          width: 100%;
+          height: 100%;
+          display: none; }
+        .audit .form .pictures_box .img_group label.active .iconaddimg {
+          display: none; }
+        .audit .form .pictures_box .img_group label.active img {
+          display: block; }
+        .audit .form .pictures_box .img_group label.active .icondelete {
+          display: block; }
+  .audit .form .submit {
+    margin-top: .5rem;
+    width: 100%;
+    height: .9rem;
+    font-size: .36rem;
+    border-radius: 0; }
+
+.auditstatus {
+  background: #fff; }
+  .auditstatus .main {
+    min-height: calc(100vh - 1.8rem); }
+  .auditstatus .status {
+    padding: .5rem 0 .5rem .7rem;
+    background: #f2f2f2; }
+    .auditstatus .status i {
+      font-size: 1rem;
+      line-height: 1rem;
+      vertical-align: middle;
+      color: #DE3F37; }
+    .auditstatus .status span {
+      font-size: .36rem;
+      margin-left: .3rem;
+      vertical-align: middle; }
+  .auditstatus .info_line {
+    background: #fff;
+    border-radius: .1rem;
+    padding: .3rem;
+    margin-top: .2rem; }
+    .auditstatus .info_line li {
+      padding: .2rem 0;
+      position: relative; }
+      .auditstatus .info_line li::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: .02rem;
+        height: 100%;
+        top: 0;
+        left: 1.05rem;
+        background: #D2D2D2; }
+      .auditstatus .info_line li .time {
+        text-align: right;
+        flex-shrink: 0;
+        width: .85rem;
+        font-size: .24rem;
+        color: #999;
+        padding-right: .15rem; }
+        .auditstatus .info_line li .time span {
+          display: block;
+          transform-origin: right center;
+          transform: scale(0.7); }
+      .auditstatus .info_line li .circle {
+        flex-shrink: 0;
+        width: .42rem;
+        height: .42rem;
+        line-height: .42rem;
+        border-radius: 50%;
+        background: #9A9A9A;
+        margin-top: .1rem;
+        position: relative;
+        z-index: 2;
+        font-size: .24rem;
+        color: #fff;
+        text-align: center; }
+      .auditstatus .info_line li .info {
+        padding-left: .2rem;
+        padding-top: .15rem; }
+        .auditstatus .info_line li .info p {
+          font-size: .24rem;
+          color: #999999; }
+      .auditstatus .info_line li:first-child .circle {
+        background: #DE3F37; }
+        .auditstatus .info_line li:first-child .circle:before {
+          content: "\e60e"; }
+      .auditstatus .info_line li:first-child::before {
+        height: 50%;
+        top: auto;
+        bottom: 0; }
+      .auditstatus .info_line li:last-child::before {
+        height: 50%; }
+      .auditstatus .info_line li:last-child .circle {
+        width: .12rem;
+        height: .12rem;
+        margin-left: .15rem;
+        margin-top: .3rem; }
+        .auditstatus .info_line li:last-child .circle::before {
+          content: ''; }
+  .auditstatus .view_box {
+    padding: 0 .2rem;
+    margin-top: 2rem; }
+    .auditstatus .view_box .view {
+      display: block;
+      width: 100%;
+      height: .8rem;
+      border-radius: .1rem; }

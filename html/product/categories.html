@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+<div class="categories main_box">
+  <div class="header fixed_header max_width">
+	<div class="box flex">
+    <a class="designer" href="/gulp-test/html/product/productlist.html">
+      <i class="iconfont iconmenus"></i>
+      <span class="text">Designer</span>
+    </a>
+    <div class="search_box">
+      <input type="text" placeholder="Key words">
+      <i class="iconfont iconsearch"></i>
+    </div>
+    <a class="msg" href="#">
+      <i class="iconfont iconmsg"></i>
+      <span><i>02</i></span>
+    </a>
+    <a class="video" href="#"><i class="iconfont iconvideo"></i></a>
+  </div>
+</div>
+  <div class="main">
+    <div class="menu">
+      <ul>
+        <li class="active">Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+        <li>Long skirt</li>
+        
+      </ul>
+    </div>
+    <div class="detail">
+      <div class="banner img_box">
+        <img src="../../common/img/banner.jpg" alt="banner">
+      </div>
+      <h2>Style</h2>
+      <ul class="group flex">
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+        <li>
+          <div class="img_box">
+            <a href="./productlist.html"><img src="../../common/img/img.jpg" alt="style"></a>
+          </div>
+          <p class="title"><a href="./productlist.html">Ethnic style</a></p>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <div class="footer fixed_footer max_width flex">
+  <a class="list active" href="/gulp-test/">
+    <i class="iconfont iconhome"></i>
+    <p>Home</p>
+  </a>
+  <a class="list" href="/gulp-test/html/product/categories.html">
+    <i class="iconfont iconmenu"></i>
+    <p>Categories</p>
+  </a>
+  <a class="list" href="/gulp-test/html/shopcart/shopcart.html">
+    <i class="iconfont iconcart"></i>
+    <p>Cart</p>
+  </a>
+  <a class="list" href="/gulp-test/html/user/user.html">
+    <i class="iconfont iconuser"></i>
+    <p>User</p>
+  </a>
+</div>
+</div>
+<script>
+  $(function() {
+    $('.categories .menu').on('click', 'li', function(){
+      if(!$(this).hasClass('active')){
+        $('.categories .menu li.active').removeClass('active');
+        $(this).addClass('active');
+      }
+    });
+  })
+</script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

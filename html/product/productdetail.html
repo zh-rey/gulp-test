@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+<div class="productdetail main_box">
+  <div class="header fixed_header max_width">
+	<div class="box flex">
+    <a class="designer" href="/gulp-test/html/product/productlist.html">
+      <i class="iconfont iconmenus"></i>
+      <span class="text">Designer</span>
+    </a>
+    <div class="search_box">
+      <input type="text" placeholder="Key words">
+      <i class="iconfont iconsearch"></i>
+    </div>
+    <a class="msg" href="#">
+      <i class="iconfont iconmsg"></i>
+      <span><i>02</i></span>
+    </a>
+    <a class="video" href="#"><i class="iconfont iconvideo"></i></a>
+  </div>
+</div>
+  <div class="main">
+    <div class="product_banner">
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide" style="background-image:url('../../common/img/img.jpg')"></li>
+          <li class="swiper-slide" style="background-image:url('../../common/img/head.jpg')"></li>
+          <li class="swiper-slide" style="background-image:url('../../common/img/product.jpg')"></li>
+        </ul>
+        <ul class="swiper-pagination"></ul>
+      </div>
+    </div>
+    <div class="info_box">
+      <div class="top clearfix">
+        <span class="now">$199</span>
+        <span class="old">$299</span>
+        <p class="time">Flash sale: <span>48:00:00</span></p>
+        <span class="sale">-70%</span>
+      </div>
+      <div class="bottom">
+        <span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span>
+        <span class="orders">299orders</span>
+        <span class="integral">Integral:199</span>
+      </div>
+    </div>
+    <div class="product_box">
+      <h1 class="name">Commodity Name Commodity Name Name Commodity Name Commodity Name</h1>
+      <p class="description">A simple description of a commodity  A simple description of a commodity.</p>
+      <div class="gift flex">
+        <img src="../../image/gift.png" alt="gift">
+        <div class="rt">
+          <p>This is a gift.</p>
+          <p>Click on the picture to see the big picture</p>
+        </div>
+      </div>
+      <div class="bottom flex">
+        <p class="delivery">Delivery time: <span>06/30/2019</span></p>
+        <p class="post">Postage: <span>$20</span> <i class="iconfont iconright"></i></p>
+      </div>
+    </div>
+    <div class="attrs">
+      <div class="group">
+        <p>Color:</p>
+        <div class="list clearfix"><span class="active">BLUE</span><span>RED</span><span>BLACK</span></div>
+      </div>
+      <div class="group">
+        <p>Size:</p>
+        <div class="list clearfix"><span class="active">S</span><span>L</span><span>XL</span><span>2XL</span></div>
+      </div>
+    </div>
+    <div class="feed_back">
+      <div class="top flex">
+        <span>Feed back (999)</span>
+        <a href="./feedback.html">View All <i class="iconfont iconright"></i></a>
+      </div>
+      <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+      <div class="back_box flex">
+        <img src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="commodity">
+      <p class="name">Commodity details</p>
+      <div class="detail_box">
+        <img width="100%" src="../../common/img/img.jpg" alt="product">
+        <br>
+        <img width="100%" src="../../common/img/img.jpg" alt="product">
+        <br>
+        <img width="100%" src="../../common/img/img.jpg" alt="product">
+      </div>
+    </div>
+  </div>
+  <div class="fixed_buy flex max_width">
+    <div class="operats flex">
+      <span class="opera msg"><i class="iconfont iconmsg"></i></span>
+      <span class="opera favorite"><i class="iconfont iconheart"></i></span>
+      <span class="opera cart"><i class="iconfont iconaddcart"></i></span>
+    </div>
+    <a class="buy" href="../shopcart/order.html">BUY NOW</a>
+  </div>
+</div>
+<script>
+  $(function() {
+    seajs.use('swiper', function(){
+      var bannerSwiper = new Swiper('.product_banner .swiper-container',{
+        autoplay : 3000,
+        autoplayDisableOnInteraction : false,
+        pagination : '.product_banner .swiper-pagination',
+        paginationClickable : '.product_banner .swiper-pagination',
+        loop : true
+      });
+    });
+    $('.attrs').on('click', '.group .list span', function(){ // 切换选择属性
+      if(!$(this).hasClass('active')){
+        $(this).parents('.list').find('.active').removeClass('active');
+        $(this).addClass('active');
+      }
+    })
+    $('.fixed_buy .operats .favorite').click(function(){ // 收藏
+      var $this = $(this);
+      if($this.find('i').hasClass('iconheart')){
+        $.get($api+'ajax', function(res){
+          $message('Successful collection', 'success');
+          $this.find('i').removeClass('iconheart').addClass('iconhearts');
+        });
+      }else{
+        $.get($api+'ajax', function(res){
+          $message('Cancel collection', 'success');
+          $this.find('i').addClass('iconheart').removeClass('iconhearts');
+        });
+      }
+    });
+  })
+</script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

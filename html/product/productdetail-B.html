@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+<div class="productdetail main_box">
+  <div class="header fixed_header max_width">
+	<div class="box flex">
+    <a class="designer" href="/gulp-test/html/product/productlist.html">
+      <i class="iconfont iconmenus"></i>
+      <span class="text">Designer</span>
+    </a>
+    <div class="search_box">
+      <input type="text" placeholder="Key words">
+      <i class="iconfont iconsearch"></i>
+    </div>
+    <a class="msg" href="#">
+      <i class="iconfont iconmsg"></i>
+      <span><i>02</i></span>
+    </a>
+    <a class="video" href="#"><i class="iconfont iconvideo"></i></a>
+  </div>
+</div>
+  <div class="main">
+    <div class="product_banner">
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide" style="background-image:url('../../common/img/img.jpg')"></li>
+          <li class="swiper-slide" style="background-image:url('../../common/img/head.jpg')"></li>
+          <li class="swiper-slide" style="background-image:url('../../common/img/product.jpg')"></li>
+        </ul>
+        <ul class="swiper-pagination"></ul>
+      </div>
+    </div>
+    <div class="info_box_B">
+      <div class="top">
+        <p class="flex"><span class="label">Price:</span><span>$90</span><span>$85</span><span>$80</span></p>
+        <p class="flex"><span class="label">Minimum order:</span><span>2-20</span><span>21-30</span><span>>30</span></p>
+      </div>
+      <h1 class="name">Product Name</h1>
+      <p class="description">A simple description of a commodity  A simple description of a commodity.</p>
+      <div class="attrs">
+        <p><span class="attr">Color</span><span>BLUE</span><span>RED</span><span>YELLOW</span></p>
+        <p><span class="attr">Size</span><span>M, L, XL</span></p> 
+      </div>
+    </div>
+    <div class="stors">
+      <p class="top_name">Offline store <a href="./stores.html">View All <i class="iconfont iconright"></i></a></p>
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          
+          <li class="swiper-slide">
+            <div class="store_box">
+              <div class="store flex">
+                <img class="img" src="../../common/img/img.jpg" alt="store iamge">
+                <div class="rt flex">
+                  <div class="top">
+                    <p class="name">Name of store01</p>
+                    <p class="contact">Contacts: Lucy</p>
+                  </div>
+                  <div class="bottom flex">
+                    <i class="iconfont iconlocation"></i>
+                    <p class="title_2">Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District Baiyun District</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts flex">
+                <a class="email" href="mailto:12345@gamil.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:188888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="swiper-slide">
+            <div class="store_box">
+              <div class="store flex">
+                <img class="img" src="../../common/img/img.jpg" alt="store iamge">
+                <div class="rt flex">
+                  <div class="top">
+                    <p class="name">Name of store01</p>
+                    <p class="contact">Contacts: Lucy</p>
+                  </div>
+                  <div class="bottom flex">
+                    <i class="iconfont iconlocation"></i>
+                    <p class="title_2">Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District Baiyun District</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts flex">
+                <a class="email" href="mailto:12345@gamil.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:188888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="swiper-slide">
+            <div class="store_box">
+              <div class="store flex">
+                <img class="img" src="../../common/img/img.jpg" alt="store iamge">
+                <div class="rt flex">
+                  <div class="top">
+                    <p class="name">Name of store01</p>
+                    <p class="contact">Contacts: Lucy</p>
+                  </div>
+                  <div class="bottom flex">
+                    <i class="iconfont iconlocation"></i>
+                    <p class="title_2">Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District Baiyun District</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts flex">
+                <a class="email" href="mailto:12345@gamil.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:188888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="swiper-slide">
+            <div class="store_box">
+              <div class="store flex">
+                <img class="img" src="../../common/img/img.jpg" alt="store iamge">
+                <div class="rt flex">
+                  <div class="top">
+                    <p class="name">Name of store01</p>
+                    <p class="contact">Contacts: Lucy</p>
+                  </div>
+                  <div class="bottom flex">
+                    <i class="iconfont iconlocation"></i>
+                    <p class="title_2">Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District Baiyun District</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts flex">
+                <a class="email" href="mailto:12345@gamil.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:188888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="commodity">
+      <p class="name">Commodity details</p>
+      <div class="detail_box">
+        <img width="100%" src="../../common/img/img.jpg" alt="product">
+        <br>
+        <img width="100%" src="../../common/img/img.jpg" alt="product">
+        <br>
+        <img width="100%" src="../../common/img/img.jpg" alt="product">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function() {
+    seajs.use('swiper', function(){
+      var bannerSwiper = new Swiper('.product_banner .swiper-container',{
+        autoplay : 3000,
+        autoplayDisableOnInteraction : false,
+        pagination : '.product_banner .swiper-pagination',
+        paginationClickable : '.product_banner .swiper-pagination',
+        loop : true
+      });
+      var storeSwiper = new Swiper('.stors .swiper-container',{
+        // autoplay : 3000,
+        autoplayDisableOnInteraction : false,
+        slidesPerView: 'auto',
+      });
+    });
+  })
+</script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

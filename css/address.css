@@ -1,0 +1,106 @@
+/**created by Rey on 2019.06.30***/
+.top_title {
+  font-size: .24rem;
+  color: #999999;
+  line-height: .3rem; }
+
+.addresslist .main {
+  padding: .2rem; }
+
+.addresslist .addr_group {
+  margin-top: .7rem; }
+  .addresslist .addr_group li {
+    background: #fff;
+    border-radius: .1rem;
+    padding: .3rem .2rem;
+    margin-bottom: .27rem;
+    position: relative; }
+    .addresslist .addr_group li .top {
+      line-height: .6rem; }
+      .addresslist .addr_group li .top .phone {
+        margin-left: .5rem; }
+      .addresslist .addr_group li .top a {
+        float: right;
+        color: #DE3F37; }
+        .addresslist .addr_group li .top a i {
+          line-height: .6rem;
+          font-size: .6rem; }
+    .addresslist .addr_group li .info {
+      line-height: .4rem;
+      margin: .3rem 0; }
+    .addresslist .addr_group li .default {
+      margin-top: .3rem; }
+      .addresslist .addr_group li .default i {
+        font-size: .24rem;
+        color: #DE3F37; }
+      .addresslist .addr_group li .default span {
+        color: #999999;
+        font-size: .24rem; }
+    .addresslist .addr_group li .icondel {
+      position: absolute;
+      right: .2rem;
+      bottom: .04rem;
+      font-size: .44rem;
+      color: #DE3F37; }
+
+.addresslist .add_addr {
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  background: #fff;
+  border-radius: .1rem;
+  color: #DE3F37;
+  font-size: .3rem;
+  font-weight: bold; }
+  .addresslist .add_addr i {
+    font-size: .7rem;
+    vertical-align: middle; }
+
+.addressdetail .main {
+  padding: .2rem; }
+
+.addressdetail .detail {
+  background: #fff;
+  border-radius: .1rem;
+  padding: .15rem;
+  margin-top: .2rem; }
+  .addressdetail .detail input:disabled, .addressdetail .detail textarea:disabled {
+    background: #fff; }
+  .addressdetail .detail .country {
+    margin-top: .6rem; }
+  .addressdetail .detail .default {
+    font-size: .3rem; }
+    .addressdetail .detail .default .check_box {
+      width: .66rem;
+      height: .66rem;
+      vertical-align: middle;
+      margin-right: .2rem; }
+      .addressdetail .detail .default .check_box input:checked + span:after {
+        width: .2rem;
+        height: .4rem;
+        left: .22rem; }
+
+.addressdetail .save {
+  width: 100%;
+  margin-top: .6rem;
+  border-radius: .1rem; }
+
+.addressself .search_box {
+  margin-bottom: -.4rem; }
+  .addressself .search_box input {
+    display: block;
+    width: 100%;
+    height: .57rem;
+    font-size: .24rem;
+    border-radius: .06rem;
+    padding-left: .2rem; }
+  .addressself .search_box span {
+    width: 1rem;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: .24rem;
+    color: #4C4C4C;
+    line-height: .57rem; }

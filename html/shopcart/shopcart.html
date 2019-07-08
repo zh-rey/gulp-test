@@ -10,16 +10,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <!--[if lt IE 9]>
-    <script src="/dist/common/js/respond.min.js"></script>
-    <script src="/dist/common/js/html5.min.js"></script>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_k54pci5jn6s.css">
-    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
-    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
-    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
-    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/dist/common/js/jquery.mockjax.min.js"></script>
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
     <script>
       $.mockjax({
         url: "/api/ajax",
@@ -31,7 +31,7 @@
       });
       $.mockjax({
         url: '/api/ajax1',
-        responseTime: 2000,
+        responseTime: 1000,
         responseText: {
           code: 1,
           rdata: "返回数据",
@@ -49,6 +49,7 @@
           'jquery': 'jquery-3.3.1.js',
           'swiper': 'swiper.min.js',
           'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
           'select': 'mobileSelect/mobileSelect.min.js'
         }
       });
@@ -75,11 +76,6 @@
     </script>
 </head>
 <body>
-  <!-- <div class="alert_box">
-    <div class="alert">
-      1111222
-    </div>
-  </!--> -->
 	<div class="shopcart main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
@@ -96,7 +92,7 @@
               </a>
             </div>
             <div class="bottom flex">
-              <i class="iconfont iconheart"></i>
+              <i class="iconfont iconheart favorite"></i>
               <i class="iconfont icondel"></i>
             </div>
           </div>
@@ -107,13 +103,13 @@
             <p class="info">Product attribute SKU: UNAKU0606</p>
             <p class="attr"><span>Color</span><span>Size</span></p>
             <div class="price">
-              <span class="now"><i>$</i>119</span>
+              <span class="now"><i>$</i>100</span>
               <span class="old"><i>$</i>139</span>
               <span class="integral">Integral: 119</span>
             </div>
             <div class="num_box">
               <span class="minus">-</span>
-              <input type="number" value="1">
+              <input type="number" value="1" data-price="100">
               <span class="add">+</span>
             </div>
           </div>
@@ -127,7 +123,7 @@
               </a>
             </div>
             <div class="bottom flex">
-              <i class="iconfont iconheart"></i>
+              <i class="iconfont iconheart favorite"></i>
               <i class="iconfont icondel"></i>
             </div>
           </div>
@@ -138,13 +134,13 @@
             <p class="info">Product attribute SKU: UNAKU0606</p>
             <p class="attr"><span>Color</span><span>Size</span></p>
             <div class="price">
-              <span class="now"><i>$</i>119</span>
+              <span class="now"><i>$</i>100</span>
               <span class="old"><i>$</i>139</span>
               <span class="integral">Integral: 119</span>
             </div>
             <div class="num_box">
               <span class="minus">-</span>
-              <input type="number" value="1">
+              <input type="number" value="1" data-price="100">
               <span class="add">+</span>
             </div>
           </div>
@@ -158,7 +154,7 @@
               </a>
             </div>
             <div class="bottom flex">
-              <i class="iconfont iconheart"></i>
+              <i class="iconfont iconheart favorite"></i>
               <i class="iconfont icondel"></i>
             </div>
           </div>
@@ -169,13 +165,13 @@
             <p class="info">Product attribute SKU: UNAKU0606</p>
             <p class="attr"><span>Color</span><span>Size</span></p>
             <div class="price">
-              <span class="now"><i>$</i>119</span>
+              <span class="now"><i>$</i>100</span>
               <span class="old"><i>$</i>139</span>
               <span class="integral">Integral: 119</span>
             </div>
             <div class="num_box">
               <span class="minus">-</span>
-              <input type="number" value="1">
+              <input type="number" value="1" data-price="100">
               <span class="add">+</span>
             </div>
           </div>
@@ -189,7 +185,7 @@
               </a>
             </div>
             <div class="bottom flex">
-              <i class="iconfont iconheart"></i>
+              <i class="iconfont iconheart favorite"></i>
               <i class="iconfont icondel"></i>
             </div>
           </div>
@@ -200,13 +196,13 @@
             <p class="info">Product attribute SKU: UNAKU0606</p>
             <p class="attr"><span>Color</span><span>Size</span></p>
             <div class="price">
-              <span class="now"><i>$</i>119</span>
+              <span class="now"><i>$</i>100</span>
               <span class="old"><i>$</i>139</span>
               <span class="integral">Integral: 119</span>
             </div>
             <div class="num_box">
               <span class="minus">-</span>
-              <input type="number" value="1">
+              <input type="number" value="1" data-price="100">
               <span class="add">+</span>
             </div>
           </div>
@@ -220,7 +216,7 @@
               </a>
             </div>
             <div class="bottom flex">
-              <i class="iconfont iconheart"></i>
+              <i class="iconfont iconheart favorite"></i>
               <i class="iconfont icondel"></i>
             </div>
           </div>
@@ -231,13 +227,13 @@
             <p class="info">Product attribute SKU: UNAKU0606</p>
             <p class="attr"><span>Color</span><span>Size</span></p>
             <div class="price">
-              <span class="now"><i>$</i>119</span>
+              <span class="now"><i>$</i>100</span>
               <span class="old"><i>$</i>139</span>
               <span class="integral">Integral: 119</span>
             </div>
             <div class="num_box">
               <span class="minus">-</span>
-              <input type="number" value="1">
+              <input type="number" value="1" data-price="100">
               <span class="add">+</span>
             </div>
           </div>
@@ -286,7 +282,7 @@
     </div>
     <footer class="fixed_shop">
       <div class="lf">
-        <p class="num">Number: <span>0</span></p>
+        <!-- <span class="num">Number: <span>0</span></p> -->
         <p class="price">Pay: $<span>0.00</span></p>
       </div>
       <button class="btn" id="order">Complete my order</button>
@@ -294,6 +290,7 @@
   </div>
   <script>
     $(function(){
+      var total = 0;
       var xhr = null;
       $('.shop_group').on('click', '.num_box span', function(){ //修改商品数量
         xhr && xhr.abort(); // 取消重复请求
@@ -301,21 +298,65 @@
         var num = Number($input.val());
         if($(this).hasClass('add')){ //加
           $input.val(num+1);
+          if($input.parents('.rt').find('.check_box input').prop('checked')){
+            total += $input.data('price');
+          }
         }else{ //减
           if(num>1){
             $input.val(num-1);
+            if($input.parents('.rt').find('.check_box input').prop('checked')){
+              total -= $input.data('price');
+            }
           }
         }
+        setPrice();
         xhr = $.get($api+'ajax1', function(res){
           console.log(res)
         });
+      }).on('click', '.check_box input', function(){ // 是否选中
+        var $input = $(this).parents('.rt').find('.num_box input');
+        if($(this).prop('checked')){
+          total += $input.data('price') * $input.val();
+        }else{
+          total -= $input.data('price') * $input.val();
+        }
+        setPrice()
+      }).on('click', '.icondel', function(){ // 删除
+        var $this = $(this);
+        $confirm('remove from Cart', 'Are you sure you want to delete this item?', function(){
+          $loading();
+          $.get($api+'ajax1', function(res){
+            $this.parents('li').remove();
+            if($this.parents('li').find('.check_box input').prop('checked')){
+              var $input = $this.parents('li').find('.num_box input');
+              total -= $input.data('price') *  $input.val();
+              setPrice();
+            }
+            $endloading();
+          });
+        })
+      }).on('click', '.favorite', function(){ // 收藏
+        var $this = $(this);
+        $loading();
+        $.get($api+'ajax1', function(res){
+          if($this.hasClass('iconhearts')){ // 取消收藏
+            $this.addClass('iconheart').removeClass('iconhearts')
+          }else{ // 收藏
+            $this.addClass('iconhearts').removeClass('iconheart')
+          }
+          $endloading();
+        })
       });
+      function setPrice() { // 总价更新
+        total = total<0?0:total;
+        $('.fixed_shop .price span').text(total.toFixed(2))
+      }
       $('#order').click(function(){ //跳转订单页面
         window.location.href = './order.html';
       });
     })
   </script>
     
-    <script src="/dist/common/js/common.js" type="text/javascript"></script>
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
 </body>
 </html>

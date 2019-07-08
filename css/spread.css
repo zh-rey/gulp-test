@@ -1,0 +1,127 @@
+/**created by Rey on 2019.06.30***/
+.offline .main {
+  padding: .2rem; }
+
+.offline .search_box {
+  width: 100%;
+  height: .62rem;
+  position: relative;
+  margin-bottom: .2rem; }
+  .offline .search_box input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: .31rem;
+    padding-left: .2rem; }
+  .offline .search_box i {
+    position: absolute;
+    font-size: .3rem;
+    right: .2rem;
+    top: .02rem; }
+
+.offline .offline_group .list {
+  background: #fff;
+  border-radius: .1rem;
+  overflow: hidden;
+  margin-bottom: .1rem;
+  padding-bottom: .06rem; }
+  .offline .offline_group .list .top {
+    height: .7rem;
+    line-height: .7rem;
+    margin-bottom: .06rem;
+    padding-left: .26rem;
+    border-bottom: .02rem solid #F2F2F2; }
+    .offline .offline_group .list .top .anem {
+      font-size: .3rem; }
+    .offline .offline_group .list .top .email {
+      font-size: .24rem;
+      margin-left: 1rem; }
+  .offline .offline_group .list .attr > div {
+    width: 50%;
+    padding: .1rem .26rem; }
+    .offline .offline_group .list .attr > div:first-child {
+      border-right: .02rem solid #F2F2F2; }
+  .offline .offline_group .list .attr.attr1 {
+    border-bottom: .02rem solid #F2F2F2; }
+  .offline .offline_group .list .attr .label {
+    font-size: .24rem;
+    color: #999999;
+    transform: scale(0.8);
+    transform-origin: left center; }
+  .offline .offline_group .list .attr .text {
+    font-size: .24rem; }
+
+.withdrawal .form {
+  background: #fff; }
+  .withdrawal .form label {
+    display: block;
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    border-bottom: .02rem solid #F2F2F2;
+    position: relative;
+    padding-left: 2.5rem;
+    overflow: hidden;
+    margin: 0; }
+    .withdrawal .form label span {
+      position: absolute;
+      left: .2rem;
+      top: 0;
+      bottom: 0;
+      font-size: .24rem; }
+    .withdrawal .form label input {
+      display: inline-block;
+      height: 100%;
+      border: none; }
+
+.withdrawal .btn_box {
+  padding: 0 .2rem;
+  margin-top: 2rem; }
+  .withdrawal .btn_box .submit {
+    display: block;
+    width: 100%;
+    height: .9rem;
+    font-size: .36rem;
+    border-radius: 0; }
+
+.income .tabs {
+  background: #fff; }
+  .income .tabs .tab {
+    width: 50%;
+    height: .9rem;
+    line-height: .9rem;
+    text-align: center;
+    border: .02rem solid #fff;
+    font-size: .3rem; }
+    .income .tabs .tab.active {
+      color: #DE3F37;
+      border-color: #DE3F37; }
+
+.income .tab_box {
+  margin-top: .08rem;
+  background: #fff; }
+  .income .tab_box .box {
+    display: none; }
+    .income .tab_box .box.active {
+      display: block; }
+  .income .tab_box .total {
+    padding: .3rem .4rem;
+    justify-content: space-between;
+    margin-bottom: .3rem; }
+    .income .tab_box .total .list p {
+      font-size: .24rem;
+      margin-bottom: .1rem; }
+    .income .tab_box .total .list span {
+      font-size: .36rem; }
+  .income .tab_box .group li {
+    height: 1rem;
+    padding: 0 .4rem;
+    border-top: 0.02rem solid #f2f2f2;
+    justify-content: space-between;
+    align-items: center; }
+    .income .tab_box .group li .lf p {
+      font-size: .24rem; }
+    .income .tab_box .group li .lf span {
+      color: #959595; }
+    .income .tab_box .group li .price {
+      font-size: .3rem; }

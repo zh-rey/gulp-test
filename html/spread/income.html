@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+	<div class="income main_page">
+    <header class="fixed_top">
+      <i class="iconfont iconleft back"></i>
+      <span>Detailed commission income</span>
+    </header>
+    <div class="main">
+      <div class="tabs flex">
+        <div class="tab active">Detailed</div>
+        <div class="tab">Record</div>
+      </div>
+      <div class="tab_box">
+        <div class="box active">
+          <div class="total flex">
+            <div class="list">
+              <p>Total Commission</p>
+              <span class="red">$2999</span>
+            </div>
+            <div class="list">
+              <p>Total Commission</p>
+              <span>$2999</span>
+            </div>
+          </div>
+          <ul class="group">
+            
+            <li class="flex">
+              <div class="lf">
+                <p>Source of commission</p>
+                <span class="time small">2019-07-07</span>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>Source of commission</p>
+                <span class="time small">2019-07-07</span>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>Source of commission</p>
+                <span class="time small">2019-07-07</span>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>Source of commission</p>
+                <span class="time small">2019-07-07</span>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>Source of commission</p>
+                <span class="time small">2019-07-07</span>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="box">
+          <ul class="group">
+            
+            <li class="flex">
+              <div class="lf">
+                <p>2019-07-07</p>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>2019-07-07</p>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>2019-07-07</p>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>2019-07-07</p>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+            <li class="flex">
+              <div class="lf">
+                <p>2019-07-07</p>
+              </div>
+              <span class="price">+$99.00</span>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      $('.tabs').on('click', '.tab', function(){
+        if(!$(this).hasClass('active')){
+          $('.tabs .active').removeClass('active');
+          $(this).addClass('active');
+          $('.tab_box .box.active').removeClass('active');
+          $('.tab_box .box').eq($(this).index()).addClass('active');
+        }
+      });
+    });
+  </script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

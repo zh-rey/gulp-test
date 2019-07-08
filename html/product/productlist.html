@@ -10,16 +10,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <!--[if lt IE 9]>
-    <script src="/dist/common/js/respond.min.js"></script>
-    <script src="/dist/common/js/html5.min.js"></script>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_k54pci5jn6s.css">
-    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
-    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
-    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
-    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/dist/common/js/jquery.mockjax.min.js"></script>
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
     <script>
       $.mockjax({
         url: "/api/ajax",
@@ -31,7 +31,7 @@
       });
       $.mockjax({
         url: '/api/ajax1',
-        responseTime: 2000,
+        responseTime: 1000,
         responseText: {
           code: 1,
           rdata: "返回数据",
@@ -49,6 +49,7 @@
           'jquery': 'jquery-3.3.1.js',
           'swiper': 'swiper.min.js',
           'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
           'select': 'mobileSelect/mobileSelect.min.js'
         }
       });
@@ -75,61 +76,243 @@
     </script>
 </head>
 <body>
-  <!-- <div class="alert_box">
-    <div class="alert">
-      1111222
+<div class="productlist main_box">
+  <div class="header fixed_header max_width">
+	<div class="box flex">
+    <a class="designer" href="/gulp-test/html/product/productlist.html">
+      <i class="iconfont iconmenus"></i>
+      <span class="text">Designer</span>
+    </a>
+    <div class="search_box">
+      <input type="text" placeholder="Key words">
+      <i class="iconfont iconsearch"></i>
     </div>
-  </!--> -->
-<link rel="stylesheet" href="../../common/js/mobileSelect/mobileSelect.css">
-<div class="order main_page">
-  <header class="fixed_top">
-    <i class="iconfont iconleft back"></i>
-    <span>Product List</span>
-  </header>
-  <div class="main">
-    <button class="btn">按钮</button>
+    <a class="msg" href="#">
+      <i class="iconfont iconmsg"></i>
+      <span><i>02</i></span>
+    </a>
+    <a class="video" href="#"><i class="iconfont iconvideo"></i></a>
   </div>
-  <div id="select">1111</div>
+</div>
+  <div class="main">
+    <div class="filter_box flex max_width">
+      <div class="list"><span>Type</span><i class="iconfont iconsort"></i></div>
+      <div class="list"><span>Attribute</span><i class="iconfont iconsort"></i></div>
+      <div class="list"><span>Label</span><i class="iconfont iconsort"></i></div>
+      <div class="list screen"><span>Screen</span><i class="iconfont iconscreen"></i></div>
+    </div>
+    <div class="product_group">
+      <ul class="clearfix">
+        
+        <li>
+          <a href="./productdetail.html" class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+            <span class="type">Hot</span>
+            <i class="favorite iconfont iconheart"></i>
+          </a>
+          <div class="info_box">
+            <div class="info">
+              <div class="price clearfix"><span class="now">$199</span><span class="old">$399</span><span class="discount">-30%</span></div>
+              <p class="order small">1999 Orders</p>
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn consultation">Consultation <i class="iconfont iconuser"></i></button>
+            </div>
+            <div class="locl">
+              <p class="store"><span class="small">Offline store</span><i class="iconfont iconlocation"></i></p>
+              <p class="buy">Contact stores to buy</p> 
+              <div class="contact btn">
+                <a class="email" href="mailto:123@gmail.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:18888888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <a href="./productdetail.html" class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+            <span class="type">Hot</span>
+            <i class="favorite iconfont iconheart"></i>
+          </a>
+          <div class="info_box">
+            <div class="info">
+              <div class="price clearfix"><span class="now">$199</span><span class="old">$399</span><span class="discount">-30%</span></div>
+              <p class="order small">1999 Orders</p>
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn consultation">Consultation <i class="iconfont iconuser"></i></button>
+            </div>
+            <div class="locl">
+              <p class="store"><span class="small">Offline store</span><i class="iconfont iconlocation"></i></p>
+              <p class="buy">Contact stores to buy</p> 
+              <div class="contact btn">
+                <a class="email" href="mailto:123@gmail.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:18888888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <a href="./productdetail.html" class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+            <span class="type">Hot</span>
+            <i class="favorite iconfont iconheart"></i>
+          </a>
+          <div class="info_box">
+            <div class="info">
+              <div class="price clearfix"><span class="now">$199</span><span class="old">$399</span><span class="discount">-30%</span></div>
+              <p class="order small">1999 Orders</p>
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn consultation">Consultation <i class="iconfont iconuser"></i></button>
+            </div>
+            <div class="locl">
+              <p class="store"><span class="small">Offline store</span><i class="iconfont iconlocation"></i></p>
+              <p class="buy">Contact stores to buy</p> 
+              <div class="contact btn">
+                <a class="email" href="mailto:123@gmail.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:18888888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <a href="./productdetail.html" class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+            <span class="type">Hot</span>
+            <i class="favorite iconfont iconheart"></i>
+          </a>
+          <div class="info_box">
+            <div class="info">
+              <div class="price clearfix"><span class="now">$199</span><span class="old">$399</span><span class="discount">-30%</span></div>
+              <p class="order small">1999 Orders</p>
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn consultation">Consultation <i class="iconfont iconuser"></i></button>
+            </div>
+            <div class="locl">
+              <p class="store"><span class="small">Offline store</span><i class="iconfont iconlocation"></i></p>
+              <p class="buy">Contact stores to buy</p> 
+              <div class="contact btn">
+                <a class="email" href="mailto:123@gmail.com"><i class="iconfont iconemail"></i></a>
+                <a class="tel" href="tel:18888888888"><i class="iconfont icontel"></i></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        
+          <li>
+            <a href="./productdetail.html" class="img_box">
+              <img src="../../common/img/img.jpg" alt="product">
+              <span class="type">Hot</span>
+              <i class="favorite iconfont iconheart"></i>
+            </a>
+            <div class="info_box_B">
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn see_detail">See Details</button>
+            </div>
+          </li>
+          
+          <li>
+            <a href="./productdetail.html" class="img_box">
+              <img src="../../common/img/img.jpg" alt="product">
+              <span class="type">Hot</span>
+              <i class="favorite iconfont iconheart"></i>
+            </a>
+            <div class="info_box_B">
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn see_detail">See Details</button>
+            </div>
+          </li>
+          
+          <li>
+            <a href="./productdetail.html" class="img_box">
+              <img src="../../common/img/img.jpg" alt="product">
+              <span class="type">Hot</span>
+              <i class="favorite iconfont iconheart"></i>
+            </a>
+            <div class="info_box_B">
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn see_detail">See Details</button>
+            </div>
+          </li>
+          
+          <li>
+            <a href="./productdetail.html" class="img_box">
+              <img src="../../common/img/img.jpg" alt="product">
+              <span class="type">Hot</span>
+              <i class="favorite iconfont iconheart"></i>
+            </a>
+            <div class="info_box_B">
+              <p class="listing small">Listing time: <span>20190601</span></p>
+              <p class="flash small">Flash sale: <span>48:00:00</span></p>
+              <button class="btn see_detail">See Details</button>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  <div class="footer fixed_footer max_width flex">
+  <a class="list active" href="/gulp-test/">
+    <i class="iconfont iconhome"></i>
+    <p>Home</p>
+  </a>
+  <a class="list" href="/gulp-test/html/product/categories.html">
+    <i class="iconfont iconmenu"></i>
+    <p>Categories</p>
+  </a>
+  <a class="list" href="/gulp-test/html/shopcart/shopcart.html">
+    <i class="iconfont iconcart"></i>
+    <p>Cart</p>
+  </a>
+  <a class="list" href="/gulp-test/html/user/user.html">
+    <i class="iconfont iconuser"></i>
+    <p>User</p>
+  </a>
+</div>
 </div>
 <script>
   $(function() {
-    $('.btn').click(function() {
-      if ($(this).hasloading()) {
-      $message('测试1', 'success');
-        $(this).endloading()
-      } else {
-      $message('测试2', 'error');
-        $(this).loading()
+    $('.filter_box').on('click', '.list', function(){
+      if(!$(this).hasClass('screen')){
+        $(this).toggleClass('active');
+        $loading();
+        $.get($api+'ajax1', function(res){
+          $endloading();
+        });
       }
-      seajs.use(['select'], function(){
-        var mobileSelect = new MobileSelect({
-          trigger: '#select',
-          title: 'Country choice',
-          ensureBtnText: 'Compolete',
-          cancelBtnText: 'Cancel',
-          ensureBtnColor: '#35986B',
-          titleColor: '#818181',
-          wheels: [
-            {
-              data: [
-                { id: '1', value: '附近' },
-                { id: '2', value: '上城区' },
-                { id: '3', value: '下城区' },
-                { id: '4', value: '江干区' },
-                { id: '5', value: '拱墅区' },
-                { id: '6', value: '西湖区' }
-              ]
-            }
-          ],
-          callback: function(indexArr, data) {
-            console.log(data) //Returns the selected json data
-          }
-        })
-      });
+    });
+    $('.product_group').on('click', '.favorite', function(){ // 收藏
+      var $this = $(this);
+      if($this.hasClass('iconheart')){
+        $.get($api+'ajax1', function(res){
+          $message('Successful collection', 'success');
+          $this.removeClass('iconheart').addClass('iconhearts');
+        });
+      }else{
+        $.get($api+'ajax1', function(res){
+          $message('Cancel collection', 'success');
+          $this.addClass('iconheart').removeClass('iconhearts');
+        });
+      }
+    }).on('click', '.consultation', function(){
+      $(this).parents('.info_box').addClass('showLocal');
+    }).on('click', '.locl', function(){
+      $(this).parents('.info_box').removeClass('showLocal');
+    }).on('click', '.contact', function(e){
+      e.stopPropagation();
     })
   })
 </script>
     
-    <script src="/dist/common/js/common.js" type="text/javascript"></script>
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
 </body>
 </html>

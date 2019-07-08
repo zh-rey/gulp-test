@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+	<div class="myorder main_page">
+    <header class="fixed_top">
+      <i class="iconfont iconleft back"></i>
+      <span>My Order</span>
+    </header>
+    <div class="main">
+      <div class="search_box">
+        <input type="text" placeholder="Search all orders">
+        <i class="iconfont iconsearch"></i>
+      </div>
+      <div class="order_group">
+        
+        <div class="order_box">
+          <div class="order">
+            <span class="num">Order number: 123456789123456</span>
+            <span class="status">Completed</span>
+          </div>
+          <ul class="group">
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+          </ul>
+          <div class="bottom">
+            <p class="discount">Discount</p>
+            <p><span>1 items</span><span>Total:$119</span></p>
+            <div class="btns">
+              <button class="btn confirm">Confirm</button>
+              <a class="btn logistics" href="./logistics.html">Logistics</a>
+              <button class="btn detele">Detele</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order_box">
+          <div class="order">
+            <span class="num">Order number: 123456789123456</span>
+            <span class="status">Completed</span>
+          </div>
+          <ul class="group">
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+          </ul>
+          <div class="bottom">
+            <p class="discount">Discount</p>
+            <p><span>1 items</span><span>Total:$119</span></p>
+            <div class="btns">
+              <button class="btn confirm">Confirm</button>
+              <a class="btn logistics" href="./logistics.html">Logistics</a>
+              <button class="btn detele">Detele</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order_box">
+          <div class="order">
+            <span class="num">Order number: 123456789123456</span>
+            <span class="status">Completed</span>
+          </div>
+          <ul class="group">
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <img src="../../common/img/img.jpg" alt="product">
+              <div class="info">
+                <p class="name title_2">Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress Long-sleeved dress</p>
+                <p class="attr">Product attribute SKU: UNAKU0606</p>
+                <p class="para"><span class="color">Color</span><span class="size">Size</span></p>
+              </div>
+              <div class="price">
+                <p><span>$</span>119.00</p>
+                <span>x1</span>
+              </div>
+            </li>
+            
+          </ul>
+          <div class="bottom">
+            <p class="discount">Discount</p>
+            <p><span>1 items</span><span>Total:$119</span></p>
+            <div class="btns">
+              <button class="btn confirm">Confirm</button>
+              <a class="btn logistics" href="./logistics.html">Logistics</a>
+              <button class="btn detele">Detele</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <footer class="fixed_bottom flex">
+      <a class="center" href="./user.html"><i class="iconfont iconcenter"></i></a>
+      <div class="page_box">
+        <i class="iconfont iconleft"></i>
+        <span>Page</span>
+        <i class="iconfont iconright"></i>
+      </div>
+    </footer>
+  </div>
+  <script>
+    $(function(){
+      $('.search_box .iconsearch').click(function(){ // 搜索
+        $loading();
+        $.get($api+'ajax1', function(res){
+          $endloading();
+        });
+      });
+      $('.order_group').on('click', '.btns button.detele', function(){ // 删除
+        var $this = $(this);
+        $confirm('remove from Cart', 'Are you sure you want to delete this item?', function(){
+          $this.loading();
+          $.get($api+'ajax1', function(res){
+            $this.parents('.order_box').remove();
+            $this.endloading();
+          });
+        });
+      });
+    });
+  </script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

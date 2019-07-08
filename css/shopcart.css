@@ -116,7 +116,7 @@
 .order .addr {
   align-items: center;
   padding: .2rem;
-  margin-bottom: .7rem; }
+  margin-bottom: .4rem; }
   .order .addr .lf {
     width: 100%; }
     .order .addr .lf .top .name {
@@ -275,3 +275,53 @@
   .topay .fixed_shop .btn {
     height: 1rem;
     border-radius: .5rem; }
+
+.coupon .main {
+  padding: .2rem; }
+
+.coupon .coupon_group > label {
+  background: #fff;
+  border-radius: .1rem;
+  margin-bottom: .1rem;
+  padding: .26rem .2rem;
+  justify-content: space-between;
+  align-items: center; }
+  .coupon .coupon_group > label .lf p {
+    font-size: .4rem;
+    color: #DE3F37;
+    margin-bottom: .2rem; }
+  .coupon .coupon_group > label .lf .info {
+    font-size: .24rem; }
+    .coupon .coupon_group > label .lf .info .over {
+      margin-right: .2rem; }
+  .coupon .coupon_group > label .check_box {
+    width: .62rem;
+    height: .62rem; }
+    .coupon .coupon_group > label .check_box input:checked + span:after {
+      left: .22rem;
+      top: .1rem;
+      width: .18rem;
+      height: .28rem; }
+  .coupon .coupon_group > label.disabled .lf p, .coupon .coupon_group > label.disabled .lf .info {
+    color: #999999; }
+
+.couponadd .main {
+  padding: .37rem .2rem; }
+
+.couponadd .coupon {
+  background: #fff;
+  border-radius: .1rem; }
+  .couponadd .coupon .top {
+    color: #DE3F37;
+    font-size: .4rem;
+    height: 1.06rem;
+    line-height: 1.06rem;
+    padding: 0 .2rem;
+    border-bottom: 1px solid #E6E6E6; }
+  .couponadd .coupon .bottom p {
+    line-height: .6rem;
+    font-size: .24rem;
+    color: #2A2A2A;
+    padding-left: .2rem; }
+    .couponadd .coupon .bottom p span {
+      min-height: 1rem; }

@@ -2,7 +2,7 @@
 /**create by Rey on 2017.10.12***/
 $base-font: .28rem;
 $base-color: #333333;
-$color-o:#285A9F;
+$color-o:#DE3F37;
 html{
 	width: 100%;
 	max-width: 1200px;
@@ -37,9 +37,10 @@ a{
 	text-decoration: none;
 	-webkit-user-drag: none;
 	-webkit-tap-highlight-color: transparent;
-	&:hover{color:$color-o;}
+	// &:hover{color:$color-o;}
 }
 input,textarea,select{border:1px solid #ddd;}
+textarea{resize: vertical;}
 input:focus,textarea:focus,select:focus{outline: none !important;}
 .fl{float:left;}
 .fr{float:right;}

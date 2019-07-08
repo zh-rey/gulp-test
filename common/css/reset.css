@@ -38,11 +38,12 @@ a {
   text-decoration: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent; }
-  a:hover {
-    color: #285A9F; }
 
 input, textarea, select {
   border: 1px solid #ddd; }
+
+textarea {
+  resize: vertical; }
 
 input:focus, textarea:focus, select:focus {
   outline: none !important; }

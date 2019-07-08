@@ -76,41 +76,31 @@
     </script>
 </head>
 <body>
-	<div class="topay main_page">
+	<div class="couponadd main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Cart</span>
+      <span>Add Coupon</span>
     </header>
     <div class="main">
-      <div class="select_box shadow_box">
-        <label class="flex">
-          <img src="../../image/paypal.png" alt="paypal">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <img src="../../image/ipay.png" alt="iPayLinks">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><img src="../../image/money_icon.png" alt="Delivery"><span>Delivery</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><i class="iconfont icontel"></i><span>Telephone order</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
+      <div class="coupon">
+        <div class="top">EXtra 10% off / $99 / </div>
+        <div class="bottom">
+          <p><span>From:</span>Page advertisement</p>
+          <p><span>Time:</span>20190611—20190620</p>
+          <p><span>Details:</span>Coupon details</p>
+        </div>
+      </div>
+      <div class="fixed_btn">
+        <button class="receive btn">To receive</button>
       </div>
     </div>
-    <footer class="fixed_shop">
-      <div class="lf">
-        <p class="num">Order number: <span>123456789</span></p>
-        <p class="price">Pay: $<span>0.00</span></p>
-      </div>
-      <button class="btn" id="order">To pay</button>
-    </footer>
   </div>
   <script>
-    
+    $(function(){
+      $('.fixed_top .cancel').click(function(){
+        console.log(111)
+      });
+    })
   </script>
     
     <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>

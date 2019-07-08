@@ -76,38 +76,51 @@
     </script>
 </head>
 <body>
-	<div class="topay main_page">
+	<div class="addressdetail main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Cart</span>
+      <span>Edit Address</span>
     </header>
     <div class="main">
-      <div class="select_box shadow_box">
-        <label class="flex">
-          <img src="../../image/paypal.png" alt="paypal">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <img src="../../image/ipay.png" alt="iPayLinks">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><img src="../../image/money_icon.png" alt="Delivery"><span>Delivery</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><i class="iconfont icontel"></i><span>Telephone order</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
+      <p class="top_tittle">ADDRESSES</p>
+      <div class="detail">
+        <form>
+          <label>
+            <p class="label">First Name*</p>
+            <input type="text" value="Jack" disabled>
+          </label>
+          <label>
+            <p class="label">Last Name*</p>
+            <input type="text" value="Jack" disabled>
+          </label>
+          <label>
+            <p class="label">Delivery Address*</p>
+            <textarea disabled>Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District, Guangzhou</textarea>
+            <input class="additional" type="text" placeholder="Additional Info" disabled>
+          </label>
+          <label>
+            <p class="label country">Country*</p>
+            <div class="select"><span>Country</span><i class="iconfont iconselect"></i></div>
+          </label>
+          <label>
+            <p class="label">City*</p>
+            <div class="select"><span>City Name</span><i class="iconfont iconselect"></i></div>
+          </label>
+          <div class="phone_box flex">
+            <div class="select code"><span>+254</span><i class="iconfont iconselect"></i></div>
+            <label class="phone">
+              <p class="label">Mobile phone number*</p>
+              <input type="phone" value="12345678901" disabled>
+            </label>
+          </div>
+          <div class="default">
+            <label class="check_box"><input type="checkbox" checked="true" hidden disabled><span></span></label>
+            <span>Default Shipping Address</span>
+          </div>
+        </form>
       </div>
+      <button class="save btn">Save</button>
     </div>
-    <footer class="fixed_shop">
-      <div class="lf">
-        <p class="num">Order number: <span>123456789</span></p>
-        <p class="price">Pay: $<span>0.00</span></p>
-      </div>
-      <button class="btn" id="order">To pay</button>
-    </footer>
   </div>
   <script>
     

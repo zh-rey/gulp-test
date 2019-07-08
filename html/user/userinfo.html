@@ -76,41 +76,91 @@
     </script>
 </head>
 <body>
-	<div class="topay main_page">
+	<div class="userinfo main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Cart</span>
+      <span>Personal information</span>
     </header>
     <div class="main">
-      <div class="select_box shadow_box">
-        <label class="flex">
-          <img src="../../image/paypal.png" alt="paypal">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <img src="../../image/ipay.png" alt="iPayLinks">
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><img src="../../image/money_icon.png" alt="Delivery"><span>Delivery</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
-        <label class="flex">
-          <p><i class="iconfont icontel"></i><span>Telephone order</span></p>
-          <div class="check_box"><input type="checkbox" hidden><span></span></div>
-        </label>
+      <p class="top_tittle">ADDRESSES</p>
+      <div class="detail">
+        <form class="form_box">
+          <label>
+            <p class="label">First Name*</p>
+            <input type="text" value="Jack">
+          </label>
+          <label>
+            <p class="label">Last Name*</p>
+            <input type="text" value="Jack">
+          </label>
+          <label>
+            <p class="label">Email*</p>
+            <input type="text" value="123456789@qq.com">
+          </label>
+          <label>
+            <p class="label country">Countries*</p>
+            <div class="select" id="country"><span>Countries</span><i class="iconfont iconselect"></i></div>
+          </label>
+          <div class="phone_box flex">
+            <div class="select code" id="code"><span>+254</span><i class="iconfont iconselect"></i></div>
+            <label class="phone">
+              <p class="label">Mobile phone number*</p>
+              <input type="phone" value="12345678901">
+            </label>
+          </div>
+        </form>
+      <div class="fixed_btn">
+        <button class="save btn">Save</button>
       </div>
     </div>
-    <footer class="fixed_shop">
-      <div class="lf">
-        <p class="num">Order number: <span>123456789</span></p>
-        <p class="price">Pay: $<span>0.00</span></p>
-      </div>
-      <button class="btn" id="order">To pay</button>
-    </footer>
   </div>
   <script>
-    
+    $(function(){
+      seajs.use(['select'], function(){
+        new MobileSelect({
+          trigger: '#country',
+          title: 'Country choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: 'country1' },
+                { id: '2', value: 'country2' },
+                { id: '3', value: 'country3' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+        new MobileSelect({
+          trigger: '#code',
+          title: 'Code choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: 'code1' },
+                { id: '2', value: 'code2' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+      });
+      $('.fixed_btn .save').click(function(){
+        console.log('save')
+      })
+    })
   </script>
     
     <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>

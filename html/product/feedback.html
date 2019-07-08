@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/gulp-test/common/js/respond.min.js"></script>
+    <script src="/gulp-test/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/gulp-test/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_72d9nuqqgxb.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/gulp-test/css/style.min.css">
+    <script type="text/javascript" src="/gulp-test/common/js/sea.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/gulp-test/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 1000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'clipboard': 'clipboard.min.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+<div class="feedback main_page">
+  <header class="fixed_top">
+    <i class="iconfont iconleft back"></i>
+    <span>Feed back</span>
+  </header>
+  <div class="main">
+    <div class="stars_group">
+      <p class="list active" data-star="0"><span>All</span>(3)</p>
+      <p class="list" data-star="5"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i></span>(1)</p>
+      <p class="list" data-star="3"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i></span>(2)</p>
+    </div>
+    <div class="feed_group">
+      
+      <div class="back_box flex">
+        <img class="head" src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="img_group flex">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+      
+      <div class="back_box flex">
+        <img class="head" src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="img_group flex">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+      
+      <div class="back_box flex">
+        <img class="head" src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="img_group flex">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+      
+      <div class="back_box flex">
+        <img class="head" src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="img_group flex">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+      
+      <div class="back_box flex">
+        <img class="head" src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="img_group flex">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+      
+      <div class="back_box flex">
+        <img class="head" src="../../image/head.png" alt="head">
+        <div class="rt">
+          <div class="top clearfix">
+            <div class="lf">
+              <p class="name">Name</p>
+              <p class="time">07th May, 2019 18:41</p>
+            </div>
+            <p class="sort"><span class="star_group"><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstars"></i><i class="iconfont iconstar"></i></span></p>
+          </div>
+          <div class="img_group flex">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="info">True evaluation of a dress. From our loyal buyer.True evaluation of a dress. From our loyal buyer</div>
+          <div class="attrs_show">
+            <span>Color: red</span>
+            <span>Size: L</span>
+          </div> 
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <footer class="fixed_bottom fixed_page flex">
+    <div class="page_box">
+      <i class="iconfont iconleft"></i>
+      <span>Page</span>
+      <i class="iconfont iconright"></i>
+    </div> 
+  </footer>
+</div>
+<script>
+  $(function() {
+    $('.stars_group').on('click', '.list', function(){
+      
+    });
+  })
+</script>
+    
+    <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>
