@@ -1,0 +1,93 @@
+/**created by Rey on 2018.05.30***/
+.banner .swiper-container {
+  padding-bottom: 40%; }
+
+.nav {
+  justify-content: space-around;
+  margin: .26rem 0; }
+  .nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: #DE3F37;
+    color: #fff;
+    font-size: .24rem; }
+
+.product_group {
+  padding: 0 .2rem; }
+  .product_group .list {
+    margin-bottom: .45rem;
+    border-radius: .1rem;
+    overflow: hidden; }
+    .product_group .list .top {
+      padding: 0 .1rem;
+      font-size: .24rem;
+      background: #DE3F37;
+      color: #fff; }
+      .product_group .list .top .flex {
+        justify-content: space-between;
+        align-items: center; }
+      .product_group .list .top span i {
+        font-size: .3rem;
+        margin-left: .2rem; }
+      .product_group .list .top span b {
+        font-weight: normal;
+        margin-left: .1rem; }
+      .product_group .list .top a {
+        font-size: .24rem;
+        color: #fff; }
+      .product_group .list .top .time i {
+        font-size: .4rem;
+        margin-right: .2rem; }
+      .product_group .list .top .time span {
+        font-size: .3rem; }
+    .product_group .list .group {
+      padding: .1rem .05rem;
+      background: #fff; }
+      .product_group .list .group li {
+        float: left;
+        width: 50%;
+        padding: 0 .05rem;
+        margin-bottom: .3rem; }
+        .product_group .list .group li .img_box::before {
+          padding-bottom: 102.94%; }
+        .product_group .list .group li .title {
+          line-height: .5rem; }
+          .product_group .list .group li .title a {
+            font-size: .3rem;
+            color: #666; }
+          .product_group .list .group li .title.loca {
+            position: relative;
+            padding-right: .4rem; }
+            .product_group .list .group li .title.loca i {
+              position: absolute;
+              top: 0;
+              right: .1rem;
+              font-size: .34rem;
+              color: #F39700; }
+        .product_group .list .group li .price {
+          font-size: .24rem;
+          color: #4D4D4D; }
+  .product_group .video_box .name {
+    font-size: .36rem;
+    color: #3E3E3E;
+    line-height: .8rem;
+    font-weight: bold; }
+  .product_group .video_box .video::before {
+    padding-bottom: 50%; }
+  .product_group .video_box .video i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1rem;
+    height: 1.88rem;
+    margin: auto;
+    z-index: 10;
+    color: #fff;
+    font-size: 1rem; }

@@ -1,0 +1,277 @@
+/**created by Rey on 2018.06.01***/
+.shopcart .main {
+  padding: .25rem .20rem; }
+
+.shopcart .viewed {
+  margin-top: .5rem;
+  justify-content: space-between;
+  font-size: .24rem;
+  font-weight: bold; }
+
+.shopcart .viewed_group {
+  background: #fff;
+  flex-wrap: wrap;
+  padding: .2rem 0;
+  margin-top: .2rem; }
+  .shopcart .viewed_group li {
+    flex-shrink: 0;
+    width: 50%;
+    padding: .1rem; }
+
+.shop_group li {
+  padding: .3rem .08rem;
+  margin-bottom: .27rem; }
+  .shop_group li .lf {
+    width: 1.68rem;
+    flex-shrink: 0;
+    padding-top: .2rem; }
+    .shop_group li .lf .bottom {
+      margin-top: .45rem;
+      justify-content: space-between; }
+      .shop_group li .lf .bottom i {
+        color: #DE3F37;
+        font-size: .32rem;
+        font-weight: bold; }
+  .shop_group li .rt {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-right: .8rem;
+    padding-left: .2rem; }
+    .shop_group li .rt .check_box {
+      position: absolute;
+      top: .06rem;
+      right: .3rem; }
+    .shop_group li .rt .name {
+      font-size: .3rem;
+      color: #4D4D4D;
+      margin-bottom: .16rem; }
+    .shop_group li .rt .info {
+      font-size: .24rem;
+      color: #999999;
+      line-height: .36rem;
+      transform: scale(0.75);
+      transform-origin: left center; }
+    .shop_group li .rt .attr {
+      margin-bottom: .14rem; }
+      .shop_group li .rt .attr span {
+        color: #666666;
+        margin-right: .5rem;
+        font-size: .24rem; }
+    .shop_group li .rt .price .now {
+      font-size: .28rem;
+      color: #DE3F37;
+      font-weight: bold;
+      margin-right: .1rem; }
+      .shop_group li .rt .price .now i {
+        display: inline-block;
+        font-style: normal;
+        font-size: .24rem;
+        transform: scale(0.75); }
+    .shop_group li .rt .price .old {
+      font-size: .24rem;
+      color: #ccc;
+      text-decoration: line-through;
+      margin-right: .1rem; }
+      .shop_group li .rt .price .old i {
+        font-style: normal; }
+    .shop_group li .rt .price .integral {
+      font-size: .24rem;
+      color: #666; }
+    .shop_group li .rt .num_box {
+      float: right;
+      position: relative;
+      width: 1.4rem;
+      height: .36rem;
+      padding: 0 .4rem;
+      margin-top: .14rem;
+      margin-right: -.4rem; }
+      .shop_group li .rt .num_box span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: .3rem;
+        height: .3rem;
+        line-height: .3rem;
+        text-align: center;
+        background: #DE3F37;
+        color: #fff;
+        border-radius: 50%;
+        font-size: .24rem; }
+      .shop_group li .rt .num_box .add {
+        left: auto;
+        right: 0; }
+      .shop_group li .rt .num_box input {
+        width: 100%;
+        height: .36rem;
+        border: none;
+        border-bottom: 1px solid #CBCBCB;
+        vertical-align: top;
+        text-align: center;
+        font-size: .28rem; }
+
+.order .main {
+  padding: .25rem .20rem; }
+
+.order .addr {
+  align-items: center;
+  padding: .2rem;
+  margin-bottom: .7rem; }
+  .order .addr .lf {
+    width: 100%; }
+    .order .addr .lf .top .name {
+      font-size: .3rem;
+      font-weight: bold; }
+    .order .addr .lf .top .phone {
+      font-weight: bold;
+      font-size: .24rem;
+      margin-left: .5rem; }
+    .order .addr .lf .detail {
+      font-size: .24rem;
+      color: #666666;
+      margin-top: .18rem;
+      line-height: .3rem; }
+  .order .addr .rt {
+    width: .6rem; }
+    .order .addr .rt i {
+      font-size: .4rem; }
+
+.order .shipping {
+  align-items: center;
+  padding: .2rem;
+  margin-bottom: .1rem;
+  justify-content: space-between; }
+  .order .shipping .lf {
+    flex-shrink: 0; }
+  .order .shipping .mid {
+    width: 100%;
+    padding: 0 .3rem;
+    line-height: .4rem; }
+  .order .shipping .rt {
+    flex-shrink: 0;
+    width: .6rem; }
+    .order .shipping .rt i {
+      font-size: .4rem; }
+
+.order .shipping_free {
+  font-size: .24rem;
+  margin-bottom: .3rem; }
+  .order .shipping_free span {
+    color: #DE3F37; }
+
+.order .time_box {
+  padding: .2rem .1rem;
+  align-items: center; }
+  .order .time_box span {
+    width: 33.33%; }
+  .order .time_box .name {
+    font-size: .3rem; }
+  .order .time_box .time, .order .time_box .pos {
+    font-size: .24rem;
+    color: #929292; }
+
+.order .insurance {
+  padding: .2rem .1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: .2rem 0; }
+  .order .insurance .name {
+    font-size: .3rem; }
+
+.order .coupon_box {
+  padding: .2rem .1rem;
+  align-items: center;
+  justify-content: space-between; }
+  .order .coupon_box .name {
+    flex-shrink: 0;
+    font-size: .3rem; }
+  .order .coupon_box .rt {
+    flex-shrink: 0;
+    width: .6rem; }
+    .order .coupon_box .rt i {
+      font-size: .4rem; }
+  .order .coupon_box .mid {
+    width: 100%;
+    text-align: right;
+    padding-right: .3rem;
+    font-size: .3rem;
+    color: #8C8C8C; }
+
+.order .coupon_text {
+  font-size: .3rem;
+  color: #020202; }
+  .order .coupon_text span {
+    color: #DE3F37; }
+
+.order .summary {
+  padding: 0 .1rem;
+  margin-top: .3rem; }
+  .order .summary .top {
+    font-size: .3rem;
+    line-height: .8rem; }
+  .order .summary ul {
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB; }
+    .order .summary ul li {
+      justify-content: space-between;
+      font-size: .26rem;
+      line-height: .46rem; }
+  .order .summary .bottom {
+    padding-bottom: .2rem; }
+    .order .summary .bottom .total {
+      justify-content: space-between;
+      font-size: .3rem;
+      font-weight: bold;
+      margin: .1rem; }
+    .order .summary .bottom .reward {
+      font-size: .24rem;
+      text-align: right; }
+      .order .summary .bottom .reward span {
+        color: #DE3F37; }
+
+.topay .main {
+  padding: .25rem .20rem; }
+
+.topay .select_box label {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 1rem;
+  padding: 0 .2rem;
+  border-bottom: 1px solid #E6E6E6; }
+  .topay .select_box label:last-child {
+    border: none; }
+  .topay .select_box label img {
+    height: .7rem;
+    vertical-align: middle; }
+  .topay .select_box label p img {
+    height: .5rem; }
+  .topay .select_box label p i {
+    font-size: .24rem; }
+  .topay .select_box label p span {
+    vertical-align: middle;
+    font-size: .3rem;
+    color: #575757;
+    margin-left: .2rem; }
+  .topay .select_box label .check_box {
+    width: .62rem;
+    height: .62rem; }
+    .topay .select_box label .check_box input:checked + span:after {
+      left: .22rem;
+      top: .1rem;
+      width: .18rem;
+      height: .28rem; }
+
+.topay .fixed_shop {
+  height: 1.2rem; }
+  .topay .fixed_shop .lf .num {
+    position: absolute;
+    left: .2rem;
+    bottom: 1.4rem;
+    text-align: left; }
+  .topay .fixed_shop .lf .price {
+    font-size: .4rem;
+    margin-top: .16rem; }
+  .topay .fixed_shop .btn {
+    height: 1rem;
+    border-radius: .5rem; }

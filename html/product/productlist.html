@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/dist/common/js/respond.min.js"></script>
+    <script src="/dist/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_k54pci5jn6s.css">
+    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
+    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 2000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+  <!-- <div class="alert_box">
+    <div class="alert">
+      1111222
+    </div>
+  </!--> -->
+<link rel="stylesheet" href="../../common/js/mobileSelect/mobileSelect.css">
+<div class="order main_page">
+  <header class="fixed_top">
+    <i class="iconfont iconleft back"></i>
+    <span>Product List</span>
+  </header>
+  <div class="main">
+    <button class="btn">按钮</button>
+  </div>
+  <div id="select">1111</div>
+</div>
+<script>
+  $(function() {
+    $('.btn').click(function() {
+      if ($(this).hasloading()) {
+      $message('测试1', 'success');
+        $(this).endloading()
+      } else {
+      $message('测试2', 'error');
+        $(this).loading()
+      }
+      seajs.use(['select'], function(){
+        var mobileSelect = new MobileSelect({
+          trigger: '#select',
+          title: 'Country choice',
+          ensureBtnText: 'Compolete',
+          cancelBtnText: 'Cancel',
+          ensureBtnColor: '#35986B',
+          titleColor: '#818181',
+          wheels: [
+            {
+              data: [
+                { id: '1', value: '附近' },
+                { id: '2', value: '上城区' },
+                { id: '3', value: '下城区' },
+                { id: '4', value: '江干区' },
+                { id: '5', value: '拱墅区' },
+                { id: '6', value: '西湖区' }
+              ]
+            }
+          ],
+          callback: function(indexArr, data) {
+            console.log(data) //Returns the selected json data
+          }
+        })
+      });
+    })
+  })
+</script>
+    
+    <script src="/dist/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

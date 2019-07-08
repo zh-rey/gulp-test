@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/dist/common/js/respond.min.js"></script>
+    <script src="/dist/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_k54pci5jn6s.css">
+    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
+    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 2000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+  <!-- <div class="alert_box">
+    <div class="alert">
+      1111222
+    </div>
+  </!--> -->
+<div class="index main_box">
+  <div class="header fixed_header max_width">
+	<div class="box flex">
+    <div class="designer">
+      <i class="iconfont iconmenus"></i>
+      <span class="text">Designer</span>
+    </div>
+    <div class="search_box">
+      <input type="text" placeholder="Key words">
+      <i class="iconfont iconsearch"></i>
+    </div>
+    <a class="msg" href="#">
+      <i class="iconfont iconmsg"></i>
+      <span><i>02</i></span>
+    </a>
+    <a class="video" href="#"><i class="iconfont iconvideo"></i></a>
+  </div>
+</div>
+  <div class="main">
+    <div class="banner">
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide" style="background-image:url('/dist/common/img/banner.jpg')">
+            <a href="#"></a>
+          </li>
+          <li class="swiper-slide" style="background-image:url('/dist/common/img/banner.jpg')">
+            <a href="#"></a>
+          </li>
+          <li class="swiper-slide" style="background-image:url('/dist/common/img/banner.jpg')">
+            <a href="#"></a>
+          </li>
+        </ul>
+        <ul class="swiper-pagination"></ul>
+      </div>
+    </div>
+    <nav class="nav flex">
+      <a href="#">New Products</a>
+      <a href="#">Discount</a>
+      <a href="#">Rush to buy</a>
+      <a href="#">Advance sale</a>
+      <a href="#">Offline store</a>
+    </nav>
+    <div class="product_group">
+      <div class="list">
+        <div class="top">
+          <div class="flex">
+            <span>RUSH TO BUY</span>
+            <a href="#">SEE ALL <i class="iconfont iconright"></i></a>
+          </div>
+          <p class="time">
+            <i class="iconfont iconflash"></i><span>48:00:00</span>
+          </p>
+        </div>
+        <ul class="group clearfix">
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="list">
+        <div class="video_box">
+          <p class="name">VIDEO INTRODUCTION</p>
+          <div class="video img_box">
+            <a href="#">
+              <img src="/dist/common/img/img.jpg" alt="video" />
+              <i class="iconfont iconvideo"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <div class="top">
+          <div class="flex">
+            <span>DISCOUT<i class="iconfont iconcoupon"></i></span>
+            <a href="#">SEE ALL <i class="iconfont iconright"></i></a>
+          </div>
+        </div>
+        <ul class="group clearfix">
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="list">
+        <div class="top">
+          <div class="flex">
+            <span>NEW PRODUCT</span>
+            <a href="#">SEE ALL <i class="iconfont iconright"></i></a>
+          </div>
+        </div>
+        <ul class="group clearfix">
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+            <p class="price"><span class="now">$99.00</span></p>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="list">
+        <div class="top">
+          <div class="flex">
+            <span
+              >NEW PRODUCT<i class="iconfont icontime"></i
+              ><b>20190620 10:00</b></span
+            >
+            <a href="#">SEE ALL <i class="iconfont iconright"></i></a>
+          </div>
+        </div>
+        <ul class="group clearfix">
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title">
+              <a href="#">Sleeveless dress Sleeveless dress Sleeveless dress</a>
+            </p>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="list">
+        <div class="top">
+          <div class="flex">
+            <span>STORE<i class="iconfont iconshop"></i></span>
+            <a href="#">SEE ALL <i class="iconfont iconright"></i></a>
+          </div>
+        </div>
+        <ul class="group clearfix">
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title loca">
+              <a href="#">Sleeveless dress</a>
+              <i class="iconfont iconlocation"></i>
+            </p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title loca">
+              <a href="#">Sleeveless dress</a>
+              <i class="iconfont iconlocation"></i>
+            </p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title loca">
+              <a href="#">Sleeveless dress</a>
+              <i class="iconfont iconlocation"></i>
+            </p>
+          </li>
+          
+          <li class="product">
+            <div class="img_box">
+              <a href="/dist/html/product/detail.html">
+                <img src="/dist/image/img.jpg" alt="product" />
+              </a>
+            </div>
+            <p class="title loca">
+              <a href="#">Sleeveless dress</a>
+              <i class="iconfont iconlocation"></i>
+            </p>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer fixed_footer max_width flex">
+  <a class="list active" href="/dist/">
+    <i class="iconfont iconhome"></i>
+    <p>Home</p>
+  </a>
+  <a class="list" href="/dist/html/Categories">
+    <i class="iconfont iconmenu"></i>
+    <p>Categories</p>
+  </a>
+  <a class="list" href="/dist/html/shopcart/shopcart.html">
+    <i class="iconfont iconcart"></i>
+    <p>Cart</p>
+  </a>
+  <a class="list" href="/dist/html/user">
+    <i class="iconfont iconuser"></i>
+    <p>User</p>
+  </a>
+</div>
+</div>
+<script></script>
+<script src="/dist/js/index.min.js"></script>
+    
+    <script src="/dist/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--[if lt IE 9]>
+    <script src="/dist/common/js/respond.min.js"></script>
+    <script src="/dist/common/js/html5.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/dist/common/img/favicon.ico">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1249487_k54pci5jn6s.css">
+    <link rel="stylesheet" type="text/css" href="/dist/common/css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css">
+    <script type="text/javascript" src="/dist/common/js/sea.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/dist/common/js/jquery.mockjax.min.js"></script>
+    <script>
+      $.mockjax({
+        url: "/api/ajax",
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      $.mockjax({
+        url: '/api/ajax1',
+        responseTime: 2000,
+        responseText: {
+          code: 1,
+          rdata: "返回数据",
+          msg: '后台返回的信息'
+        }
+      });
+      // $.ajaxSetup({
+      //   beforeSend: function(xhr) {
+      //     console.log(this);
+      //     console.log(xhr);
+      //   }
+      // });
+      seajs.config({
+        alias: {
+          'jquery': 'jquery-3.3.1.js',
+          'swiper': 'swiper.min.js',
+          'common': 'common.js',
+          'select': 'mobileSelect/mobileSelect.min.js'
+        }
+      });
+      $(function(){
+        function htmlFont(){
+          var baseWidth = 750;
+          var deviceWidth = document.documentElement.clientWidth;
+          deviceWidth>baseWidth && (deviceWidth=baseWidth);
+          document.documentElement.style.fontSize = deviceWidth / baseWidth*100 + 'px';
+        }
+        htmlFont();
+        $('body').show();
+        var htmlFontSet = null;
+        $(window).resize(function(){
+          if(typeof(htmlFontSet)){clearTimeout(htmlFontSet)}
+          htmlFontSet = setTimeout(htmlFont,500);
+        });
+      });
+      /* 全局变量 */
+      var $api = '/api/';
+      var globalVar = {
+        api: '/api/'
+      }
+    </script>
+</head>
+<body>
+  <!-- <div class="alert_box">
+    <div class="alert">
+      1111222
+    </div>
+  </!--> -->
+	<div class="order main_page">
+    <header class="fixed_top">
+      <i class="iconfont iconleft back"></i>
+      <span>Confirm Order</span>
+    </header>
+    <div class="main">
+      <div class="addr shadow_box flex">
+        <div class="lf">
+          <p class="top">
+            <span class="name">jack</span>
+            <span class="phone">+86 18888888888</span>
+          </p>
+          <div class="detail">Office 806, Floor 8 of Jia Jun Building B, Shi Cha Road, Baiyun District, Guangzhou</div>
+        </div>
+        <div class="rt">
+          <i class="iconfont iconright"></i>
+        </div>
+      </div>
+      <ul class="shop_group">
+        
+        <li class="flex shadow_box">
+          <div class="lf">
+            <div class="img_box">
+              <a href="#">
+                <img src="../../image/img.jpg" alt="product">
+              </a>
+            </div>
+            <div class="bottom flex">
+              <i class="iconfont iconheart"></i>
+              <i class="iconfont icondel"></i>
+            </div>
+          </div>
+          <div class="rt">
+            <p class="name title"><a href="#">Long-sleeved dress Long-sleeved dress Long-sleeved dress</a></p>
+            <p class="info">Gifts/ Discounts/ Snaps</p>
+            <p class="info">Product attribute SKU: UNAKU0606</p>
+            <p class="attr"><span>Color</span><span>Size</span></p>
+            <div class="price">
+              <span class="now"><i>$</i>119</span>
+              <span class="old"><i>$</i>139</span>
+              <span class="integral">Integral: 119</span>
+            </div>
+            <div class="num_box">
+              <span class="minus">-</span>
+              <input type="number" value="1">
+              <span class="add">+</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="flex shadow_box">
+          <div class="lf">
+            <div class="img_box">
+              <a href="#">
+                <img src="../../image/img.jpg" alt="product">
+              </a>
+            </div>
+            <div class="bottom flex">
+              <i class="iconfont iconheart"></i>
+              <i class="iconfont icondel"></i>
+            </div>
+          </div>
+          <div class="rt">
+            <p class="name title"><a href="#">Long-sleeved dress Long-sleeved dress Long-sleeved dress</a></p>
+            <p class="info">Gifts/ Discounts/ Snaps</p>
+            <p class="info">Product attribute SKU: UNAKU0606</p>
+            <p class="attr"><span>Color</span><span>Size</span></p>
+            <div class="price">
+              <span class="now"><i>$</i>119</span>
+              <span class="old"><i>$</i>139</span>
+              <span class="integral">Integral: 119</span>
+            </div>
+            <div class="num_box">
+              <span class="minus">-</span>
+              <input type="number" value="1">
+              <span class="add">+</span>
+            </div>
+          </div>
+        </li>
+        
+      </ul>
+      <div class="shipping shadow_box flex">
+        <label class="check_box lf"><input type="checkbox"><span></span></label>
+        <div class="mid">
+          <p>Standadr Shipping:$5.99</p>
+          <p>7-15business days(Free Over $59)</p>
+        </div>
+        <div class="rt">
+          <i class="iconfont iconright"></i>
+        </div>
+      </div>
+      <p class="shipping_free">Buy <span>$68.00</span> more to enjoy FREE STANDARD SHIPPING</p>
+      <div class="time_box shadow_box flex">
+        <span class="name">Delivery time</span>
+        <span class="time">20190620</span>
+        <span class="pos">Postage: $0</span>
+      </div>
+      <div class="insurance shadow_box flex">
+        <span class="name">Add Shipping Insurance(<span>$0.99</span>)</span>
+        <label class="choose_box"><input type="checkbox" hidden><span></span></label>
+      </div>
+      <div class="coupon_box shadow_box flex">
+        <span class="name">Coupon</span>
+        <span class="mid">Full 50 minus 5</span>
+        <span class="rt"><i class="iconfont iconright"></i></span>
+      </div>
+      <p class="coupon_text">Witn more <span>$19</span> you can get a <span>7%</span> <span>Off</span></p>
+      <div class="summary shadow_box">
+        <div class="top">Order Summary</div>
+        <ul>
+          <li class="flex"><span>Item Total</span><span>$31.99</span></li>
+          <li class="flex"><span>Subtotal</span><span>$31.99</span></li>
+          <li class="flex"><span>Shipping Price</span><span>$31.99</span></li>
+          <li class="flex"><span>Shipping Insurance</span><span>$31.99</span></li>
+        </ul>
+        <div class="bottom">
+          <p class="total flex"><span>Order Total</span><span>$88.88</span></p>
+          <p class="reward">(Reward <span>36</span> UNAKU Credits)</p>
+        </div>
+      </div>
+    </div>
+    <footer class="fixed_shop">
+      <button class="btn" id="order">Complete my order</button>
+    </footer>
+  </div>
+  <script>
+    $('#order').click(function(){
+      window.location.href = './topay.html';
+    });
+  </script>
+  <script>
+    
+  </script>
+    
+    <script src="/dist/common/js/common.js" type="text/javascript"></script>
+</body>
+</html>
