@@ -76,51 +76,93 @@
     </script>
 </head>
 <body>
-	<div class="changepassword userinfo main_page">
+	<div class="paystatus main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Change password</span>
     </header>
     <div class="main">
-      <p class="top_tittle">Change your password</p>
-      <div class="detail">
-        <form class="form_box">
-          <label>
-            <input type="text" value="" placeholder="Old Password">
-            <i class="iconfont changeshow iconshowpassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="New Password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="Duplicate new password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="text" value="" placeholder="Verification code">
-          </label>
-        </form>
-      <div class="fixed_btn">
-        <button class="change btn">Change Password</button>
+      <div class="top paysuccess">
+        <div class="icon">
+          <i class="iconfont icontrue"></i>
+        </div>
+        <p class="status">Successful payment</p>
+        <p class="text">Please wait for our disposal.</p>
+        <p class="order">ORDER N˚:123456789</p>
+        <div class="res">
+          Reservation information
+        </div>
+      </div>
+      <div class="top submitted">
+        <div class="icon">
+          <i class="iconfont icongouwudai"></i>
+        </div>
+        <p class="status">An order is submitted.</p>
+        <p class="text">Your choice is cash on delivery. <br/>We will contact you later.</p>
+        <p class="order">ORDER N˚:123456789</p>
+        <div class="res">
+          Reservation information
+        </div>
+      </div>
+      <div class="top phone">
+        <div class="icon">
+          <i class="iconfont icontel"></i>
+        </div>
+        <p class="status">An order is submitted.</p>
+        <p class="text">Please contact customer service for payment.</p>
+        <a class="tel btn" href="tel:12345678">Call:+8612345678901</a>
+        <p class="order">ORDER N˚:123456789</p>
+        <div class="res">
+          Reservation information
+        </div>
+      </div>
+      <div class="top error">
+        <div class="icon">
+          <i class="iconfont iconquestion"></i>
+        </div>
+        <p class="status">Failure to pay</p>
+        <p class="text">Please pay as soon as possible <br/>so as not to miss your favorite goods.</p>
+        <a class="tel btn" href="#">Continue to pay</a>
+        <p class="order">ORDER N˚:123456789</p>
+        <div class="res">
+          <p class="name">Order Information</p>
+          <ul class="shop_group">
+            <li class="flex shadow_box">
+              <div class="lf">
+                <div class="img_box">
+                  <a href="#">
+                    <img src="../../image/img.jpg" alt="product">
+                  </a>
+                </div>
+              </div>
+              <div class="rt">
+                <p class="name title"><a href="#">Long-sleeved dress Long-sleeved dress Long-sleeved dress</a></p>
+                <p class="info">Gifts/ Discounts/ Snaps</p>
+                <p class="info">Product attribute SKU: UNAKU0606</p>
+                <p class="attr"><span>Color</span><span>Size</span></p>
+                <div class="price">
+                  <span class="now"><i>$</i>119</span>
+                  <span class="old"><i>$</i>139</span>
+                  <span class="integral">Integral: 119</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="btns flex">
+        <a href="#" class="service btn">Service</a>
+        <a href="./order.html" class="order btn">Order center</a>
+        <a href="../product/categories.html" class="shopping btn">Go shopping</a>
       </div>
     </div>
   </div>
   <script>
     $(function(){
-      $('.form_box').on('click', '.changeshow', function(){
-        if($(this).hasClass('iconshowpassword')){
-          $(this).addClass('iconclosepassword').removeClass('iconshowpassword')
-          $(this).prev().attr('type', 'password');
-        }else{
-          $(this).removeClass('iconclosepassword').addClass('iconshowpassword')
-          $(this).prev().attr('type', 'text');
-        }
-      });
-      $('.fixed_btn .change').click(function(){
-        console.log('change')
-      })
+
     })
+  </script>
+  <script>
+    
   </script>
     
     <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>

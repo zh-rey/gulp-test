@@ -198,28 +198,6 @@
       transform-origin: center center;
       transform: rotate(90deg); }
 
-.couponlist .page_box {
-  height: calc(100vh - 2.8rem);
-  overflow-y: auto; }
-
-.couponlist .pages {
-  position: fixed;
-  right: .2rem;
-  bottom: .3rem; }
-  .couponlist .pages .iconfont {
-    display: inline-block;
-    width: .5rem;
-    height: .5rem;
-    line-height: .5rem;
-    text-align: center;
-    font-size: .4rem;
-    border: .02rem solid #333;
-    border-radius: 50%;
-    vertical-align: middle; }
-  .couponlist .pages span {
-    vertical-align: middle;
-    margin: 0 .2rem; }
-
 .myorder .main {
   padding: .2rem; }
 
@@ -477,3 +455,158 @@
       width: 100%;
       font-size: .3rem;
       padding-left: .2rem; }
+
+.collection .group .list {
+  padding: .2rem;
+  border-bottom: .02rem solid #B8B8B8; }
+  .collection .group .list .img_box {
+    flex-shrink: 0;
+    width: 1.7rem;
+    height: 1.7rem; }
+  .collection .group .list .rt {
+    width: 100%;
+    padding: 0 .2rem;
+    overflow: hidden; }
+    .collection .group .list .rt .top {
+      position: relative;
+      padding-right: .4rem; }
+      .collection .group .list .rt .top .iconhearts {
+        position: absolute;
+        font-size: .36rem;
+        color: #DE3F37;
+        top: -.1rem;
+        right: -.1rem; }
+    .collection .group .list .rt .price {
+      margin-top: .1rem; }
+      .collection .group .list .rt .price .old {
+        color: #989898;
+        margin-left: .25rem; }
+    .collection .group .list .rt .btn_box {
+      text-align: right;
+      margin-top: .1rem; }
+      .collection .group .list .rt .btn_box .btn {
+        height: .7rem;
+        line-height: .7rem; }
+
+.messagelist .group {
+  margin-top: .1rem;
+  background: #fff; }
+  .messagelist .group .list {
+    padding: .3rem .2rem;
+    border-bottom: .02rem solid #F3F3F3; }
+    .messagelist .group .list a.flex {
+      justify-content: space-between;
+      align-items: center; }
+      .messagelist .group .list a.flex .icon {
+        flex-shrink: 0;
+        width: .72rem;
+        height: .72rem;
+        line-height: .72rem;
+        text-align: center;
+        border-radius: 50%;
+        background: #F2F2F2; }
+        .messagelist .group .list a.flex .icon i {
+          font-size: .5rem; }
+          .messagelist .group .list a.flex .icon i.iconcoupon {
+            color: #DE3F37; }
+          .messagelist .group .list a.flex .icon i.iconorder {
+            font-size: .4rem;
+            color: #4EB4B3; }
+          .messagelist .group .list a.flex .icon i.iconmsg {
+            color: #E69C2E; }
+    .messagelist .group .list.active .icon {
+      position: relative; }
+      .messagelist .group .list.active .icon::before {
+        content: '';
+        position: absolute;
+        top: -.04rem;
+        right: -.02rem;
+        width: .2rem;
+        height: .2rem;
+        background: #DE3F37;
+        border-radius: 50%; }
+    .messagelist .group .list .middle {
+      overflow: hidden;
+      width: 100%;
+      padding: 0 .3rem; }
+      .messagelist .group .list .middle .name {
+        font-size: .3rem; }
+      .messagelist .group .list .middle .info {
+        font-size: .24rem;
+        color: #999999;
+        margin-top: .1rem; }
+    .messagelist .group .list .iconright {
+      flex-shrink: 0;
+      font-size: .4rem; }
+
+.messagedetail .group {
+  margin-top: .1rem;
+  background: #fff; }
+  .messagedetail .group .list {
+    padding: .3rem .2rem;
+    border-bottom: .02rem solid #F3F3F3;
+    justify-content: space-between; }
+    .messagedetail .group .list .icon {
+      flex-shrink: 0;
+      width: .72rem;
+      height: .72rem;
+      line-height: .72rem;
+      text-align: center;
+      border-radius: 50%;
+      background: #F2F2F2; }
+      .messagedetail .group .list .icon i {
+        font-size: .5rem; }
+        .messagedetail .group .list .icon i.iconcoupon {
+          color: #DE3F37; }
+        .messagedetail .group .list .icon i.iconorder {
+          font-size: .4rem;
+          color: #4EB4B3; }
+        .messagedetail .group .list .icon i.iconmsg {
+          color: #E69C2E; }
+    .messagedetail .group .list .rt {
+      width: 100%;
+      padding-left: .3rem; }
+      .messagedetail .group .list .rt .top {
+        padding-right: 1.2rem;
+        overflow: hidden;
+        position: relative; }
+        .messagedetail .group .list .rt .top .name {
+          font-size: .3rem; }
+        .messagedetail .group .list .rt .top .time {
+          position: absolute;
+          transform-origin: right center;
+          right: 0;
+          top: .05rem; }
+      .messagedetail .group .list .rt .info {
+        font-size: .24rem;
+        color: #808080;
+        margin-top: .1rem; }
+
+.videolist .main {
+  background: #fff; }
+
+.videolist .group .list {
+  margin-top: .1rem; }
+  .videolist .group .list:before {
+    padding-bottom: 50%; }
+  .videolist .group .list .iconfont {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 70px;
+    text-align: center; }
+    .videolist .group .list .iconfont:before {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }

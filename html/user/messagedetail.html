@@ -76,52 +76,46 @@
     </script>
 </head>
 <body>
-	<div class="changepassword userinfo main_page">
+	<div class="messagedetail main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Change password</span>
+      <span>Details of the message</span>
     </header>
-    <div class="main">
-      <p class="top_tittle">Change your password</p>
-      <div class="detail">
-        <form class="form_box">
-          <label>
-            <input type="text" value="" placeholder="Old Password">
-            <i class="iconfont changeshow iconshowpassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="New Password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="Duplicate new password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="text" value="" placeholder="Verification code">
-          </label>
-        </form>
-      <div class="fixed_btn">
-        <button class="change btn">Change Password</button>
-      </div>
+    <div class="main page_box">
+      <ul class="group">
+        <li class="list flex">
+          <span class="icon"><i class="iconfont iconcoupon"></i></span>
+          <div class="rt">
+            <p class="top title">
+              <span class="name">Sales promotion</span>
+              <span class="time small">07-07-2019</span>
+            </p>
+            <p class="info">Detailed information on discount of promotional products</p>
+          </div>
+        </li>
+        <li class="list flex">
+          <span class="icon"><i class="iconfont iconorder"></i></span>
+          <div class="rt">
+            <p class="top title">
+              <span class="name">Sales promotion</span>
+              <span class="time small">07-07-2019</span>
+            </p>
+            <p class="info">Detailed information on discount of promotional products</p>
+          </div>
+        </li>
+        <li class="list flex">
+          <span class="icon"><i class="iconfont iconmsg"></i></span>
+          <div class="rt">
+            <p class="top title">
+              <span class="name">Sales promotion</span>
+              <span class="time small">07-07-2019</span>
+            </p>
+            <p class="info">Detailed information on discount of promotional products</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
-  <script>
-    $(function(){
-      $('.form_box').on('click', '.changeshow', function(){
-        if($(this).hasClass('iconshowpassword')){
-          $(this).addClass('iconclosepassword').removeClass('iconshowpassword')
-          $(this).prev().attr('type', 'password');
-        }else{
-          $(this).removeClass('iconclosepassword').addClass('iconshowpassword')
-          $(this).prev().attr('type', 'text');
-        }
-      });
-      $('.fixed_btn .change').click(function(){
-        console.log('change')
-      })
-    })
-  </script>
     
     <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>
 </body>

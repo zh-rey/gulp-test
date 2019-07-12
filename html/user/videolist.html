@@ -76,51 +76,60 @@
     </script>
 </head>
 <body>
-	<div class="changepassword userinfo main_page">
+	<div class="videolist main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Change password</span>
+      <span>Message List</span>
     </header>
-    <div class="main">
-      <p class="top_tittle">Change your password</p>
-      <div class="detail">
-        <form class="form_box">
-          <label>
-            <input type="text" value="" placeholder="Old Password">
-            <i class="iconfont changeshow iconshowpassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="New Password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="Duplicate new password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="text" value="" placeholder="Verification code">
-          </label>
-        </form>
-      <div class="fixed_btn">
-        <button class="change btn">Change Password</button>
-      </div>
+    <div class="main page_box">
+      <ul class="group">
+        
+        <li class="list img_box">
+          <a href="#">
+            <img src="../../common/img/img.jpg" alt="video image">
+            <i class="iconfont iconvideo1"></i>
+          </a>
+        </li>
+        
+        <li class="list img_box">
+          <a href="#">
+            <img src="../../common/img/img.jpg" alt="video image">
+            <i class="iconfont iconvideo1"></i>
+          </a>
+        </li>
+        
+        <li class="list img_box">
+          <a href="#">
+            <img src="../../common/img/img.jpg" alt="video image">
+            <i class="iconfont iconvideo1"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="pages">
+      <i class="iconfont iconleft disabled"></i>
+      <span>Page</span>
+      <i class="iconfont iconright"></i>
     </div>
   </div>
   <script>
     $(function(){
-      $('.form_box').on('click', '.changeshow', function(){
-        if($(this).hasClass('iconshowpassword')){
-          $(this).addClass('iconclosepassword').removeClass('iconshowpassword')
-          $(this).prev().attr('type', 'password');
-        }else{
-          $(this).removeClass('iconclosepassword').addClass('iconshowpassword')
-          $(this).prev().attr('type', 'text');
+      $('.pages').on('click', '.iconfont', function(){
+        if($(this).hasClass('disabled')){ return false }
+        if($(this).hasClass('iconleft')){ // 上一页
+          $loading();
+          $.get($api+'ajax1', function(res){
+            $endloading();
+          });
+        }else{ // 下一页
+          $loading();
+          $.get($api+'ajax1', function(res){
+            $endloading();
+          });
         }
       });
-      $('.fixed_btn .change').click(function(){
-        console.log('change')
-      })
-    })
+    });
   </script>
     
     <script src="/gulp-test/common/js/common.js" type="text/javascript"></script>

@@ -325,3 +325,149 @@
     padding-left: .2rem; }
     .couponadd .coupon .bottom p span {
       min-height: 1rem; }
+
+.paystatus .main {
+  text-align: center;
+  padding: .3rem .2rem; }
+
+.paystatus .top .icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  margin: 0 auto; }
+  .paystatus .top .icon i {
+    font-size: 1.8rem; }
+
+.paystatus .top .status {
+  font-size: .36rem;
+  margin-top: .5rem; }
+
+.paystatus .top .text {
+  font-size: .24rem;
+  margin-top: .25rem; }
+
+.paystatus .top .order {
+  font-size: .3rem;
+  margin-top: .9rem; }
+
+.paystatus .top .res {
+  margin-top: .75rem;
+  background: #fff;
+  border-radius: .1rem;
+  padding: .2rem;
+  color: #454545;
+  font-size: .24rem;
+  text-align: left;
+  min-height: 2rem; }
+
+.paystatus .top.paysuccess .icon i {
+  color: #70BE1C; }
+
+.paystatus .top.paysuccess .status {
+  color: #70BE1C; }
+
+.paystatus .top.submitted .icon i {
+  color: #F69D1E; }
+
+.paystatus .top.submitted .status {
+  color: #F69D1E; }
+
+.paystatus .top.phone .icon i {
+  font-size: .8rem;
+  color: #DE3F37; }
+
+.paystatus .top.phone .status {
+  color: #DE3F37; }
+
+.paystatus .top.phone .tel {
+  margin-top: .3rem; }
+
+.paystatus .top.error .icon i {
+  color: #DE3F37; }
+
+.paystatus .top.error .status {
+  color: #DE3F37; }
+
+.paystatus .top.error .btn {
+  margin-top: .3rem; }
+
+.paystatus .top.error .res .name {
+  margin-bottom: .2rem; }
+
+.paystatus .btns {
+  margin-top: 1.5rem;
+  justify-content: space-between; }
+  .paystatus .btns .btn {
+    padding: 0;
+    width: 2.2rem; }
+
+.refund .product_box {
+  background: #fff; }
+  .refund .product_box .shop_group {
+    width: 100%; }
+    .refund .product_box .shop_group li {
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: .02rem dashed #ccc;
+      padding: .15rem .2rem; }
+      .refund .product_box .shop_group li:last-child {
+        border: none; }
+      .refund .product_box .shop_group li .rt {
+        padding-right: 0; }
+
+.refund .detail {
+  background: #fff;
+  margin-top: .08rem;
+  padding: .1rem .2rem; }
+  .refund .detail label {
+    display: block;
+    width: 100%; }
+    .refund .detail label .label {
+      font-size: .3rem; }
+  .refund .detail .goods {
+    height: .7rem;
+    line-height: .6rem;
+    border-bottom: .02rem solid #ccc; }
+    .refund .detail .goods span {
+      float: left;
+      width: 2.7rem; }
+    .refund .detail .goods .input {
+      margin-left: 2.7rem; }
+      .refund .detail .goods .input input {
+        width: 100%;
+        height: .6rem;
+        border: none; }
+  .refund .detail .refund .label {
+    display: block;
+    line-height: .6rem; }
+  .refund .detail .refund textarea {
+    width: 100%;
+    height: 1.9rem;
+    border-color: #ccc; }
+  .refund .detail .amount {
+    line-height: .6rem;
+    font-size: .3rem; }
+
+.refund .photos_box {
+  background: #fff;
+  padding: .2rem;
+  margin-top: .08rem; }
+  .refund .photos_box .name {
+    font-size: .3rem;
+    margin-bottom: .2rem; }
+  .refund .photos_box .img_group {
+    justify-content: space-between; }
+
+.refund .btn_box {
+  margin-top: .5rem;
+  padding: 0 .2rem; }
+  .refund .btn_box .submit {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    font-size: .36rem;
+    height: .9rem;
+    line-height: .9rem; }

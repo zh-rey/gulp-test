@@ -76,40 +76,8 @@
       margin-bottom: .3rem; }
     .audit .form .pictures_box .img_group {
       justify-content: space-between; }
-      .audit .form .pictures_box .img_group label {
-        width: 1.68rem;
-        height: 1.68rem;
-        line-height: 1.68rem;
-        border-radius: .1rem;
-        background: #ccc;
-        text-align: center;
-        position: relative; }
-        .audit .form .pictures_box .img_group label i.iconaddimg {
-          font-size: .8rem;
-          color: #9A9A9A; }
-        .audit .form .pictures_box .img_group label input {
-          width: 0;
-          height: 0;
-          border: 0;
-          opacity: 0; }
-        .audit .form .pictures_box .img_group label i.icondelete {
-          display: none;
-          position: absolute;
-          top: .1rem;
-          right: .1rem;
-          font-size: .3rem;
-          line-height: .3rem;
-          color: #DA251D; }
-        .audit .form .pictures_box .img_group label img {
-          width: 100%;
-          height: 100%;
-          display: none; }
-        .audit .form .pictures_box .img_group label.active .iconaddimg {
-          display: none; }
-        .audit .form .pictures_box .img_group label.active img {
-          display: block; }
-        .audit .form .pictures_box .img_group label.active .icondelete {
-          display: block; }
+      .audit .form .pictures_box .img_group .img_upload {
+        width: 1.68rem; }
   .audit .form .submit {
     margin-top: .5rem;
     width: 100%;

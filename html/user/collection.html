@@ -76,50 +76,53 @@
     </script>
 </head>
 <body>
-	<div class="changepassword userinfo main_page">
+	<div class="collection main_page">
     <header class="fixed_top">
       <i class="iconfont iconleft back"></i>
-      <span>Change password</span>
+      <span>My Collection</span>
     </header>
     <div class="main">
-      <p class="top_tittle">Change your password</p>
-      <div class="detail">
-        <form class="form_box">
-          <label>
-            <input type="text" value="" placeholder="Old Password">
-            <i class="iconfont changeshow iconshowpassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="New Password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="password" value="" placeholder="Duplicate new password">
-            <i class="iconfont changeshow iconclosepassword"></i>
-          </label>
-          <label>
-            <input type="text" value="" placeholder="Verification code">
-          </label>
-        </form>
-      <div class="fixed_btn">
-        <button class="change btn">Change Password</button>
-      </div>
+      <ul class="group">
+        
+        <li class="list flex">
+          <div class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="rt">
+            <div class="top"><p class="title">Long-sleeved dress Long-sleeved dress dress</p><i class="iconfont iconhearts"></i></div>
+            <p class="price"><span class="now">$199</span><span class="old">$299</span></p>
+            <div class="btn_box"><span class="buy btn">BUY NOW</span></div>
+          </div>
+        </li>
+        
+        <li class="list flex">
+          <div class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="rt">
+            <div class="top"><p class="title">Long-sleeved dress Long-sleeved dress dress</p><i class="iconfont iconhearts"></i></div>
+            <p class="price"><span class="now">$199</span><span class="old">$299</span></p>
+            <div class="btn_box"><span class="buy btn">BUY NOW</span></div>
+          </div>
+        </li>
+        
+        <li class="list flex">
+          <div class="img_box">
+            <img src="../../common/img/img.jpg" alt="product">
+          </div>
+          <div class="rt">
+            <div class="top"><p class="title">Long-sleeved dress Long-sleeved dress dress</p><i class="iconfont iconhearts"></i></div>
+            <p class="price"><span class="now">$199</span><span class="old">$299</span></p>
+            <div class="btn_box"><span class="buy btn">BUY NOW</span></div>
+          </div>
+        </li>
+        
+      </ul>
     </div>
   </div>
   <script>
     $(function(){
-      $('.form_box').on('click', '.changeshow', function(){
-        if($(this).hasClass('iconshowpassword')){
-          $(this).addClass('iconclosepassword').removeClass('iconshowpassword')
-          $(this).prev().attr('type', 'password');
-        }else{
-          $(this).removeClass('iconclosepassword').addClass('iconshowpassword')
-          $(this).prev().attr('type', 'text');
-        }
-      });
-      $('.fixed_btn .change').click(function(){
-        console.log('change')
-      })
+
     })
   </script>
     
